@@ -1,3 +1,53 @@
+# Custom Helpers
+* [Helpers.Html.Escape](#helpers.html.escape)
+* [Helpers.Html.HtmlDecode](#helpers.html.htmldecode)
+* [Helpers.Html.HtmlEncode](#helpers.html.htmlencode)
+* [Helpers.Math.Add](#helpers.math.add)
+* [Helpers.Math.Ceiling](#helpers.math.ceiling)
+* [Helpers.Math.Divide](#helpers.math.divide)
+* [Helpers.Math.Floor](#helpers.math.floor)
+* [Helpers.Math.Mod](#helpers.math.mod)
+* [Helpers.Math.Multiply](#helpers.math.multiply)
+* [Helpers.Math.Round](#helpers.math.round)
+* [Helpers.Math.Subtract](#helpers.math.subtract)
+* [Helpers.Number.FormatPrice](#helpers.number.formatprice)
+* [Helpers.Object.Compare](#helpers.object.compare)
+* [Helpers.Object.GetLength](#helpers.object.getlength)
+* [Helpers.Object.Lookup](#helpers.object.lookup)
+* [Helpers.Path.GetAbsolutePath](#helpers.path.getabsolutepath)
+* [Helpers.Path.GetDirectory](#helpers.path.getdirectory)
+* [Helpers.Path.GetExtension](#helpers.path.getextension)
+* [Helpers.Path.GetFilename](#helpers.path.getfilename)
+* [Helpers.Path.GetKeyValuePairMatches](#helpers.path.getkeyvaluepairmatches)
+* [Helpers.Path.HasExtension](#helpers.path.hasextension)
+* [Helpers.Path.HasKeyValuePairMatch](#helpers.path.haskeyvaluepairmatch)
+* [Helpers.Path.HasSegment](#helpers.path.hassegment)
+* [Helpers.Path.ParseUnitSlug](#helpers.path.parseunitslug)
+* [Helpers.Regex.IsMatch](#helpers.regex.ismatch)
+* [Helpers.String.Append](#helpers.string.append)
+* [Helpers.String.Contains](#helpers.string.contains)
+* [Helpers.String.Ellipsis](#helpers.string.ellipsis)
+* [Helpers.String.EndsWith](#helpers.string.endswith)
+* [Helpers.String.IsString](#helpers.string.isstring)
+* [Helpers.String.Lowercase](#helpers.string.lowercase)
+* [Helpers.String.Occurrences](#helpers.string.occurrences)
+* [Helpers.String.Prepend](#helpers.string.prepend)
+* [Helpers.String.Replace](#helpers.string.replace)
+* [Helpers.String.Reverse](#helpers.string.reverse)
+* [Helpers.String.Split](#helpers.string.split)
+* [Helpers.String.StartsWith](#helpers.string.startswith)
+* [Helpers.String.Titlecase](#helpers.string.titlecase)
+* [Helpers.String.Trim](#helpers.string.trim)
+* [Helpers.String.TrimLeft](#helpers.string.trimleft)
+* [Helpers.String.TrimRight](#helpers.string.trimright)
+* [Helpers.String.Truncate](#helpers.string.truncate)
+* [Helpers.String.TruncateWords](#helpers.string.truncatewords)
+* [Helpers.String.Uppercase](#helpers.string.uppercase)
+* [Helpers.Url.Base64Decode](#helpers.url.base64decode)
+* [Helpers.Url.Base64Encode](#helpers.url.base64encode)
+* [Helpers.Url.DecodeUri](#helpers.url.decodeuri)
+* [Helpers.Url.EncodeUri](#helpers.url.encodeuri)
+* [Helpers.Url.StripProtocol](#helpers.url.stripprotocol)
 ## Helpers.Html.Escape
 ### Summary
 Javascript escape a string
@@ -131,66 +181,71 @@ Object that is found
 Given path, get just the folder paths
 ### Returns
 Folder paths
+### Parameters
+* path: Path to pull info from
+* delimiter: Delimiter to parse path with
 ### Example
 ```
 /first/second/third/somefile.txt
             would return
             /first/second/third
 ```
-### Parameters
-* path: Path to pull info from
-* delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetDirectory
 ### Summary
 Given path, get top level directory name
 ### Returns
 Top level directory name
+### Parameters
+* path: Path to pull info from
+* delimiter: Delimiter to parse path with
 ### Example
 ```
 /first/second/third/somefile.txt
             would return
             third
 ```
-### Parameters
-* path: Path to pull info from
-* delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetExtension
 ### Summary
 Given path, get file extension
 ### Returns
 File extension
+### Parameters
+* path: Path to pull info from
+* delimiter: Delimiter to parse path with
 ### Example
 ```
 /first/second/third/somefile.txt
             would return
             txt
 ```
-### Parameters
-* path: Path to pull info from
-* delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetFilename
 ### Summary
 Given path, get file name
 ### Returns
 File name
+### Parameters
+* path: Path to pull info from
+* delimiter: Delimiter to parse path with
 ### Example
 ```
 /first/second/third/somefile.txt
             would return
             somefile.txt
 ```
-### Parameters
-* path: Path to pull info from
-* delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetKeyValuePairMatches
 ### Summary
 Given path, determine if key and value exist
 ### Returns
 Returns matching records
+### Parameters
+* path: Path to pull info from
+* keyValuePairs: List of key value pairs
+* delimiter: Delimiter to parse path with
+* offset: Offset to start key/value pair loading
 ### Example
 ```
 path = /k1/v1/k2/v2/k3/v3 
@@ -198,32 +253,33 @@ path = /k1/v1/k2/v2/k3/v3
             would return
             the keyValuePairs parameter
 ```
-### Parameters
-* path: Path to pull info from
-* keyValuePairs: List of key value pairs
-* delimiter: Delimiter to parse path with
-* offset: Offset to start key/value pair loading
 
 ## Helpers.Path.HasExtension
 ### Summary
 Given path, get whether or not it contains a file extension
 ### Returns
 Whether or not it contains a file extension
+### Parameters
+* path: Path to pull info from
+* extension: extension to look for
 ### Example
 ```
 /first/second/third/somefile.txt
             would return
             True
 ```
-### Parameters
-* path: Path to pull info from
-* extension: extension to look for
 
 ## Helpers.Path.HasKeyValuePairMatch
 ### Summary
 Given path, determine if key and value exist
 ### Returns
 Whether or not key and value exist
+### Parameters
+* path: Path to pull info from
+* key: Key to look for
+* value: Value to look for
+* delimiter: Delimiter to parse path with
+* offset: Offset to start key/value pair loading
 ### Example
 ```
 path = /k1/v1/k2/v2/k3/v3 
@@ -232,18 +288,16 @@ path = /k1/v1/k2/v2/k3/v3
             would return
             True
 ```
-### Parameters
-* path: Path to pull info from
-* key: Key to look for
-* value: Value to look for
-* delimiter: Delimiter to parse path with
-* offset: Offset to start key/value pair loading
 
 ## Helpers.Path.HasSegment
 ### Summary
 Given path, determine if segment exists
 ### Returns
 Whether or not segment exists
+### Parameters
+* path: Path to pull info from
+* segment: segment to look for
+* delimiter: Delimiter to parse path with
 ### Example
 ```
 path = /k1/v1/k2/v2/k3/v3 
@@ -251,10 +305,6 @@ path = /k1/v1/k2/v2/k3/v3
             would return
             True
 ```
-### Parameters
-* path: Path to pull info from
-* segment: segment to look for
-* delimiter: Delimiter to parse path with
 
 ## Helpers.Path.ParseUnitSlug
 ### Summary

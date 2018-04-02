@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace MustacheHelpersHelper {
 	internal class Program {
@@ -14,7 +15,13 @@ namespace MustacheHelpersHelper {
 
 			var markdownOutput = new StringBuilder();
 
-			var docs = registerHelpers.HelperDocumentation.OrderBy(p => p.Key);
+			var docs = registerHelpers.HelperDocumentation.OrderBy(p => p.Key).ToList();
+
+			markdownOutput.AppendLine("# Custom Helpers");
+			foreach (var helper in docs.Select(d => d.Key)) {
+				markdownOutput.AppendLine($"* [{helper}](#{ToGithubAnchor(helper)})");
+			}
+
 			foreach (var item in docs) {
 				var key = item.Key;
 				var doc = item.Value;
@@ -29,6 +36,13 @@ namespace MustacheHelpersHelper {
 			File.WriteAllText(markdownFile, outString);
 		}
 
+		private static string ToGithubAnchor(string text) {
+			var lower = text.ToLowerInvariant();
+			var stripped = Regex.Replace(lower, @"[^a-z0-9 -_]", String.Empty);
+			var convertedSpaces = stripped.Replace(" ", "-");
+			return convertedSpaces;
+		}
+
 		private static string ToMarkdown(string function, Documentation doc) {
 			var output = new StringBuilder();
 
@@ -36,15 +50,15 @@ namespace MustacheHelpersHelper {
 			AddIfNotEmpty("Summary", doc.Summary);
 			AddIfNotEmpty("Returns", doc.Returns);
 
-			if (!String.IsNullOrWhiteSpace(doc.Example)) {
-				output.AppendLine($"### Example{Environment.NewLine}```{Environment.NewLine}{doc.Example}{Environment.NewLine}```");
-			}
-
 			if (doc.Parameters.Any()) {
 				output.AppendLine("### Parameters");
 				foreach (var parm in doc.Parameters) {
 					output.AppendLine($"* {parm.Key}: {parm.Value}");
 				}
+			}
+
+			if (!String.IsNullOrWhiteSpace(doc.Example)) {
+				output.AppendLine($"### Example{Environment.NewLine}```{Environment.NewLine}{doc.Example}{Environment.NewLine}```");
 			}
 
 			return output.ToString();
