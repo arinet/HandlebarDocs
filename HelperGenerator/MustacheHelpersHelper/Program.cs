@@ -4,7 +4,6 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 
 namespace MustacheHelpersHelper {
 	internal class Program {
@@ -38,7 +37,7 @@ namespace MustacheHelpersHelper {
 
 		private static string ToGithubAnchor(string text) {
 			var lower = text.ToLowerInvariant();
-			var stripped = Regex.Replace(lower, @"[^a-z0-9 -_]", String.Empty);
+			var stripped = lower.Replace(".", String.Empty);
 			var convertedSpaces = stripped.Replace(" ", "-");
 			return convertedSpaces;
 		}
