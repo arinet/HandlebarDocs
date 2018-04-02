@@ -132,9 +132,11 @@ Given path, get just the folder paths
 ### Returns
 Folder paths
 ### Example
+```
 /first/second/third/somefile.txt
             would return
             /first/second/third
+```
 ### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
@@ -145,9 +147,11 @@ Given path, get top level directory name
 ### Returns
 Top level directory name
 ### Example
+```
 /first/second/third/somefile.txt
             would return
             third
+```
 ### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
@@ -158,9 +162,11 @@ Given path, get file extension
 ### Returns
 File extension
 ### Example
+```
 /first/second/third/somefile.txt
             would return
             txt
+```
 ### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
@@ -171,9 +177,11 @@ Given path, get file name
 ### Returns
 File name
 ### Example
+```
 /first/second/third/somefile.txt
             would return
             somefile.txt
+```
 ### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
@@ -184,10 +192,12 @@ Given path, determine if key and value exist
 ### Returns
 Returns matching records
 ### Example
+```
 path = /k1/v1/k2/v2/k3/v3 
             keyValuePairs = {"key":"k2", "values": ["v2", "v3"]}
             would return
             the keyValuePairs parameter
+```
 ### Parameters
 * path: Path to pull info from
 * keyValuePairs: List of key value pairs
@@ -200,9 +210,11 @@ Given path, get whether or not it contains a file extension
 ### Returns
 Whether or not it contains a file extension
 ### Example
+```
 /first/second/third/somefile.txt
             would return
             True
+```
 ### Parameters
 * path: Path to pull info from
 * extension: extension to look for
@@ -213,11 +225,13 @@ Given path, determine if key and value exist
 ### Returns
 Whether or not key and value exist
 ### Example
+```
 path = /k1/v1/k2/v2/k3/v3 
             key = k2
             vlue = v2
             would return
             True
+```
 ### Parameters
 * path: Path to pull info from
 * key: Key to look for
@@ -231,10 +245,12 @@ Given path, determine if segment exists
 ### Returns
 Whether or not segment exists
 ### Example
+```
 path = /k1/v1/k2/v2/k3/v3 
             segment = k2
             would return
             True
+```
 ### Parameters
 * path: Path to pull info from
 * segment: segment to look for
