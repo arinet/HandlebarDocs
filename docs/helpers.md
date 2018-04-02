@@ -1,224 +1,224 @@
 ## Helpers.Html.Escape
-###Summary
+### Summary
 Javascript escape a string
-###Returns
+### Returns
 Escaped string
-###Parameters
+### Parameters
 * str: String to escape
 
 ## Helpers.Html.HtmlDecode
-###Summary
+### Summary
 Decode html encoded string
-###Returns
+### Returns
 Decoded string
-###Parameters
+### Parameters
 * html: String to decode
 
 ## Helpers.Html.HtmlEncode
-###Summary
+### Summary
 Html encode string
-###Returns
+### Returns
 Html encoded string
-###Parameters
+### Parameters
 * html: String to encode
 
 ## Helpers.Math.Add
-###Summary
+### Summary
 Add two numbers
-###Returns
+### Returns
 Sum of inputs
-###Parameters
+### Parameters
 * input1: First input
 * input2: Second input
 
 ## Helpers.Math.Ceiling
-###Summary
+### Summary
 Ceiling of input
-###Returns
+### Returns
 Ceiling of input
-###Parameters
+### Parameters
 * input: Input
 
 ## Helpers.Math.Divide
-###Summary
+### Summary
 Divide first input by second input
-###Returns
+### Returns
 Divided inputs
-###Parameters
+### Parameters
 * input1: First input
 * input2: Second input
 
 ## Helpers.Math.Floor
-###Summary
+### Summary
 Floor of input
-###Returns
+### Returns
 Floor of input
-###Parameters
+### Parameters
 * input: Input
 
 ## Helpers.Math.Mod
-###Summary
+### Summary
 Modulus of first over second input
-###Returns
+### Returns
 Modulus of inputs
-###Parameters
+### Parameters
 * input1: First input
 * input2: Second input
 
 ## Helpers.Math.Multiply
-###Summary
+### Summary
 Multiply two numbers
-###Returns
+### Returns
 Multiplied inputs
-###Parameters
+### Parameters
 * input1: First input
 * input2: Second input
 
 ## Helpers.Math.Round
-###Summary
+### Summary
 Rounded input
-###Returns
+### Returns
 Rounded input
-###Parameters
+### Parameters
 * input: Input
 
 ## Helpers.Math.Subtract
-###Summary
+### Summary
 Subtract second input from first
-###Returns
+### Returns
 Subtraction of inputs
-###Parameters
+### Parameters
 * input1: First input
 * input2: Second input
 
 ## Helpers.Number.FormatPrice
-###Summary
+### Summary
 Format number as price
-###Returns
+### Returns
 Formatted price
-###Parameters
+### Parameters
 * number: Number to format
 
 ## Helpers.Object.Compare
-###Summary
+### Summary
 Compare two objects
-###Returns
+### Returns
 Whether or not operation evaluates successfully
-###Parameters
+### Parameters
 * lvalue: Left object
 * rvalue: Right object
 * operatorType: Operator to perform
 
 ## Helpers.Object.GetLength
-###Summary
+### Summary
 Gets the length of an array
-###Returns
+### Returns
 Size of array
-###Parameters
+### Parameters
 * input: Array to get length of
 
 ## Helpers.Object.Lookup
-###Summary
+### Summary
 Pull object by key or index from a dynamic object or list/array
-###Returns
+### Returns
 Object that is found
-###Parameters
+### Parameters
 * input: Object/list/array to pull from
 * lookup: key/index to look for
 
 ## Helpers.Path.GetAbsolutePath
-###Summary
+### Summary
 Given path, get just the folder paths
-###Returns
+### Returns
 Folder paths
-###Example
+### Example
 /first/second/third/somefile.txt
             would return
             /first/second/third
-###Parameters
+### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetDirectory
-###Summary
+### Summary
 Given path, get top level directory name
-###Returns
+### Returns
 Top level directory name
-###Example
+### Example
 /first/second/third/somefile.txt
             would return
             third
-###Parameters
+### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetExtension
-###Summary
+### Summary
 Given path, get file extension
-###Returns
+### Returns
 File extension
-###Example
+### Example
 /first/second/third/somefile.txt
             would return
             txt
-###Parameters
+### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetFilename
-###Summary
+### Summary
 Given path, get file name
-###Returns
+### Returns
 File name
-###Example
+### Example
 /first/second/third/somefile.txt
             would return
             somefile.txt
-###Parameters
+### Parameters
 * path: Path to pull info from
 * delimiter: Delimiter to parse path with
 
 ## Helpers.Path.GetKeyValuePairMatches
-###Summary
+### Summary
 Given path, determine if key and value exist
-###Returns
+### Returns
 Returns matching records
-###Example
+### Example
 path = /k1/v1/k2/v2/k3/v3 
             keyValuePairs = {"key":"k2", "values": ["v2", "v3"]}
             would return
             the keyValuePairs parameter
-###Parameters
+### Parameters
 * path: Path to pull info from
 * keyValuePairs: List of key value pairs
 * delimiter: Delimiter to parse path with
 * offset: Offset to start key/value pair loading
 
 ## Helpers.Path.HasExtension
-###Summary
+### Summary
 Given path, get whether or not it contains a file extension
-###Returns
+### Returns
 Whether or not it contains a file extension
-###Example
+### Example
 /first/second/third/somefile.txt
             would return
             True
-###Parameters
+### Parameters
 * path: Path to pull info from
 * extension: extension to look for
 
 ## Helpers.Path.HasKeyValuePairMatch
-###Summary
+### Summary
 Given path, determine if key and value exist
-###Returns
+### Returns
 Whether or not key and value exist
-###Example
+### Example
 path = /k1/v1/k2/v2/k3/v3 
             key = k2
             vlue = v2
             would return
             True
-###Parameters
+### Parameters
 * path: Path to pull info from
 * key: Key to look for
 * value: Value to look for
@@ -226,244 +226,244 @@ path = /k1/v1/k2/v2/k3/v3
 * offset: Offset to start key/value pair loading
 
 ## Helpers.Path.HasSegment
-###Summary
+### Summary
 Given path, determine if segment exists
-###Returns
+### Returns
 Whether or not segment exists
-###Example
+### Example
 path = /k1/v1/k2/v2/k3/v3 
             segment = k2
             would return
             True
-###Parameters
+### Parameters
 * path: Path to pull info from
 * segment: segment to look for
 * delimiter: Delimiter to parse path with
 
 ## Helpers.Path.ParseUnitSlug
-###Summary
+### Summary
 Given a bigInteger url slug, parse out the values
-###Returns
+### Returns
 object representing parsed values
-###Parameters
+### Parameters
 * path: Path to pull info from
 
 ## Helpers.Regex.IsMatch
-###Summary
+### Summary
 Determine if regex pattern matches on string
-###Returns
+### Returns
 Whether or not a match was found
-###Parameters
+### Parameters
 * str: Input
 * pattern: Regex pattern
 
 ## Helpers.String.Append
-###Summary
+### Summary
 Append one string to another
-###Returns
+### Returns
 Appened string
-###Parameters
+### Parameters
 * str: Base string
 * suffix: String to append
 
 ## Helpers.String.Contains
-###Summary
+### Summary
 Determine if the string contains a substring
-###Returns
+### Returns
 Whether or not string contains substring
-###Parameters
+### Parameters
 * str: Base string
 * match: String to match
 * ignoreCase: Whether or not to ignore case
 
 ## Helpers.String.Ellipsis
-###Summary
+### Summary
 Truncate a long string and append a ellipsis(...)
-###Returns
+### Returns
 Truncated string
-###Parameters
+### Parameters
 * str: String to trucate
 * limit: Max number of characters in final string(excluding ellipsis)
 
 ## Helpers.String.EndsWith
-###Summary
+### Summary
 Determine if the string ends with a substring
-###Returns
+### Returns
 Whether or not the string ends with substring
-###Parameters
+### Parameters
 * str: Base string
 * suffix: String to match
 * ignoreCase: Whether or not to ignore case
 
 ## Helpers.String.IsString
-###Summary
+### Summary
 Determine if the object passed in is a string
-###Returns
+### Returns
 Whether or not object is a string
-###Parameters
+### Parameters
 * value: Input
 
 ## Helpers.String.Lowercase
-###Summary
+### Summary
 Convert string to lowercase
-###Returns
+### Returns
 lowercase string
-###Parameters
+### Parameters
 * str: input
 
 ## Helpers.String.Occurrences
-###Summary
+### Summary
 Count number of times a substring appears in base string
-###Returns
+### Returns
 Number of times string occurred
-###Parameters
+### Parameters
 * str: Base string
 * substring: String to match
 * ignoreCase: Whether or not to ignore case
 
 ## Helpers.String.Prepend
-###Summary
+### Summary
 Prepend one string to another
-###Returns
+### Returns
 Prepend string
-###Parameters
+### Parameters
 * str: Base string
 * prefix: String to prepend
 
 ## Helpers.String.Replace
-###Summary
+### Summary
 Replace the part of a string with something else.
-###Returns
+### Returns
 Replaced string
-###Parameters
+### Parameters
 * str: Base string
 * a: String to match
 * b: Replacement
 
 ## Helpers.String.Reverse
-###Summary
+### Summary
 Reverse a string
-###Returns
+### Returns
 Reversed string
-###Parameters
+### Parameters
 * str: Input
 
 ## Helpers.String.Split
-###Summary
+### Summary
 Split a string on a supplied delimiter
-###Returns
+### Returns
 Array of strings
-###Parameters
+### Parameters
 * str: Base string
 * ch: Delimiter
 
 ## Helpers.String.StartsWith
-###Summary
+### Summary
 Determine if the string starts with a substring
-###Returns
+### Returns
 Whether or not the string starts with substring
-###Parameters
+### Parameters
 * str: Base string
 * prefix: String to match
 * ignoreCase: Whether or not to ignore case
 
 ## Helpers.String.Titlecase
-###Summary
+### Summary
 Convert string to Titlecase
-###Returns
+### Returns
 Titlecase string
-###Parameters
+### Parameters
 * str: input
 
 ## Helpers.String.Trim
-###Summary
+### Summary
 Trim whitespace from left and right of string
-###Returns
+### Returns
 Trimmed string
-###Parameters
+### Parameters
 * str: Base string
 
 ## Helpers.String.TrimLeft
-###Summary
+### Summary
 Trim whitespace from left of string
-###Returns
+### Returns
 Trimmed string
-###Parameters
+### Parameters
 * str: Base string
 
 ## Helpers.String.TrimRight
-###Summary
+### Summary
 Trim whitespace from right of string
-###Returns
+### Returns
 Trimmed string
-###Parameters
+### Parameters
 * str: Base string
 
 ## Helpers.String.Truncate
-###Summary
+### Summary
 Truncate a long string and append a suffix(if set)
-###Returns
+### Returns
 Truncated string
-###Parameters
+### Parameters
 * str: String to trucate
 * limit: Max number of characters in final string(excluding suffix)
 * suffix: Suffix to append if string gets trucated
 
 ## Helpers.String.TruncateWords
-###Summary
+### Summary
 Truncate a long string and base truncation on the number of words instead of characters
-###Returns
+### Returns
 Truncated string
-###Parameters
+### Parameters
 * str: STring to truncate
 * limit: Number of words in final string
 * suffix: Suffix to append if string gets truncated
 
 ## Helpers.String.Uppercase
-###Summary
+### Summary
 Convert string to UPPERCASE
-###Returns
+### Returns
 UPPERCASE string
-###Parameters
+### Parameters
 * str: input
 
 ## Helpers.Url.Base64Decode
-###Summary
+### Summary
 Base64 decode string
-###Returns
+### Returns
 Decoded string
-###Parameters
+### Parameters
 * str: Base64 string to decode
 
 ## Helpers.Url.Base64Encode
-###Summary
+### Summary
 Base64 encode string
-###Returns
+### Returns
 Base64 encoded string
-###Parameters
+### Parameters
 * str: String to Baes64 encode
 
 ## Helpers.Url.DecodeUri
-###Summary
+### Summary
 Decode a uri encoded string
-###Returns
+### Returns
 decoded string
-###Parameters
+### Parameters
 * str: Uri encoded string
 
 ## Helpers.Url.EncodeUri
-###Summary
+### Summary
 Uri encode a string
-###Returns
+### Returns
 Uri encoded string
-###Parameters
+### Parameters
 * str: String to encode
 
 ## Helpers.Url.StripProtocol
-###Summary
+### Summary
 Remove protocol from url
-###Returns
+### Returns
 Protocol free url
-###Parameters
+### Parameters
 * str: Url to remove protocol from
 

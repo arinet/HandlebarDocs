@@ -38,7 +38,7 @@ namespace MustacheHelpersHelper {
 			AddIfNotEmpty("Example", doc.Example);
 
 			if (doc.Parameters.Any()) {
-				output.AppendLine("###Parameters");
+				output.AppendLine("### Parameters");
 				foreach (var parm in doc.Parameters) {
 					output.AppendLine($"* {parm.Key}: {parm.Value}");
 				}
@@ -48,7 +48,7 @@ namespace MustacheHelpersHelper {
 
 			void AddIfNotEmpty(string name, string value) {
 				if (!String.IsNullOrWhiteSpace(value)) {
-					output.AppendLine($"###{name}{Environment.NewLine}{value}");
+					output.AppendLine($"### {name}{Environment.NewLine}{value}");
 				}
 			}
 		}
