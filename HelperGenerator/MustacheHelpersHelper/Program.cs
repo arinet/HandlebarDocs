@@ -35,7 +35,10 @@ namespace MustacheHelpersHelper {
 			output.AppendLine($"## {function}");
 			AddIfNotEmpty("Summary", doc.Summary);
 			AddIfNotEmpty("Returns", doc.Returns);
-			AddIfNotEmpty("Example", doc.Example);
+
+			if (!String.IsNullOrWhiteSpace(doc.Example)) {
+				output.AppendLine($"### Example{Environment.NewLine}```{Environment.NewLine}{doc.Example}{Environment.NewLine}```");
+			}
 
 			if (doc.Parameters.Any()) {
 				output.AppendLine("### Parameters");
