@@ -57,7 +57,7 @@ namespace MustacheHelpersHelper {
 			}
 
 			if (!String.IsNullOrWhiteSpace(doc.Example)) {
-				output.AppendLine($"### Example{Environment.NewLine}```{Environment.NewLine}{doc.Example}{Environment.NewLine}```");
+				output.AppendLine($"### Example{Environment.NewLine}```{Environment.NewLine}{doc.Example.Replace("            ", String.Empty)}{Environment.NewLine}```");
 			}
 
 			return output.ToString();

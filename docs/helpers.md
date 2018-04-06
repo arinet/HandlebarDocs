@@ -187,8 +187,8 @@ Folder paths
 ### Example
 ```
 /first/second/third/somefile.txt
-            would return
-            /first/second/third
+would return
+/first/second/third
 ```
 
 ## Helpers.Path.GetDirectory
@@ -202,8 +202,8 @@ Top level directory name
 ### Example
 ```
 /first/second/third/somefile.txt
-            would return
-            third
+would return
+third
 ```
 
 ## Helpers.Path.GetExtension
@@ -217,8 +217,8 @@ File extension
 ### Example
 ```
 /first/second/third/somefile.txt
-            would return
-            txt
+would return
+txt
 ```
 
 ## Helpers.Path.GetFilename
@@ -232,8 +232,8 @@ File name
 ### Example
 ```
 /first/second/third/somefile.txt
-            would return
-            somefile.txt
+would return
+somefile.txt
 ```
 
 ## Helpers.Path.GetKeyValuePairMatches
@@ -249,9 +249,9 @@ Returns matching records
 ### Example
 ```
 path = /k1/v1/k2/v2/k3/v3 
-            keyValuePairs = {"key":"k2", "values": ["v2", "v3"]}
-            would return
-            the keyValuePairs parameter
+keyValuePairs = {"key":"k2", "values": ["v2", "v3"]}
+would return
+the keyValuePairs parameter
 ```
 
 ## Helpers.Path.HasExtension
@@ -265,8 +265,8 @@ Whether or not it contains a file extension
 ### Example
 ```
 /first/second/third/somefile.txt
-            would return
-            True
+would return
+True
 ```
 
 ## Helpers.Path.HasKeyValuePairMatch
@@ -283,10 +283,10 @@ Whether or not key and value exist
 ### Example
 ```
 path = /k1/v1/k2/v2/k3/v3 
-            key = k2
-            vlue = v2
-            would return
-            True
+key = k2
+vlue = v2
+would return
+True
 ```
 
 ## Helpers.Path.HasSegment
@@ -301,9 +301,9 @@ Whether or not segment exists
 ### Example
 ```
 path = /k1/v1/k2/v2/k3/v3 
-            segment = k2
-            would return
-            True
+segment = k2
+would return
+True
 ```
 
 ## Helpers.Path.ParseUnitSlug
