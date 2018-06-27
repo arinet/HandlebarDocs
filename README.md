@@ -29,6 +29,9 @@ Handlebars is built upon the [mustache expression engine](http://mustache.github
 ## Custom Helpers
 Individual helpers' documentation is available [here](docs/helpers.md)
 
+## Custom Block Helpers
+Individual block helpers' documentation is available [here](docs/blockHelpers.md)
+
 ## Other Handlebar Functionality
 [http://handlebarsjs.com/](http://handlebarsjs.com/)
 * Literals
