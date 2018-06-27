@@ -1,5 +1,5 @@
 # Custom Helpers
-> These helpers all return values inline; when you reference one, it's reference gets replaced by the resulting value.
+> These helpers all return values inline; when you reference one, its reference gets replaced by the resulting value.
 >
 >For example: `<strong>{{Helper.String.Uppercase "some string"}}</strong>` would return `<strong>SOME STRING</strong>`
 
