@@ -59,7 +59,7 @@
 |**Parameters**||
 |_str_|String to escape|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -88,7 +88,7 @@ https:\/\/github.com\/arinet\/HandlebarDocs\/blob\/master\/docs\/helpers.md#help
 |**Parameters**||
 |_html_|String to decode|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -117,7 +117,7 @@ Enter a string having '&' or '"'  in it:
 |**Parameters**||
 |_html_|String to encode|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -147,7 +147,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |_input1_|First input|
 |_input2_|Second input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -184,7 +184,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |**Parameters**||
 |_input_|input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -222,7 +222,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |_input1_|First input|
 |_input2_|Second input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -259,7 +259,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |**Parameters**||
 |_input_|input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -297,7 +297,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |_input1_|First input|
 |_input2_|Second input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -335,7 +335,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |_input1_|First input|
 |_input2_|Second input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -372,7 +372,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |**Parameters**||
 |_input_|input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -410,7 +410,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |_input1_|First input|
 |_input2_|Second input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -447,7 +447,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |**Parameters**||
 |_number_|Number to format|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -484,7 +484,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |**Parameters**||
 |_input_|Array to get length of|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -535,7 +535,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 |_path_|Path to pull info from|
 |_delimiter_|Delimiter to parse path with, defaults to /|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -570,7 +570,7 @@ _first_second_third
 |_path_|Path to pull info from|
 |_delimiter_|Delimiter to parse path with, defaults to /|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -605,7 +605,7 @@ docs
 |_path_|Path to pull info from|
 |_delimiter_|Delimiter to parse path with, defaults to /|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -640,7 +640,7 @@ md
 |_path_|Path to pull info from|
 |_delimiter_|Delimiter to parse path with, defaults to /|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -675,7 +675,7 @@ helpers.md
 |_str_|Base string|
 |_suffix_|String to append|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -710,7 +710,7 @@ something or another
 |_str_|String to trucate|
 |_limit_|Max number of characters in final string(excluding ellipsis)|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -741,7 +741,7 @@ somet...
 |**Parameters**||
 |_str_|input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -774,7 +774,7 @@ something
 |_substring_|String to match|
 |_ignoreCase_|Whether or not to ignore case, defaults to false|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -814,7 +814,7 @@ something
 |_str_|Base string|
 |_prefix_|String to prepend|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -850,7 +850,7 @@ something or another
 |_a_|String to match|
 |_b_|Replacement
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -889,7 +889,7 @@ testthing testwhere
 |**Parameters**||
 |_str_|Input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -920,7 +920,7 @@ GNIHTEMOS
 |**Parameters**||
 |_str_|input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -951,7 +951,7 @@ Something
 |**Parameters**||
 |_str_|Base string|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -982,7 +982,7 @@ SOMETHING
 |**Parameters**||
 |_str_|Base string|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1013,7 +1013,7 @@ SOMETHING
 |**Parameters**||
 |_str_|Base string|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1046,7 +1046,7 @@ SOMETHING
 |_limit_|Max number of characters in final string(excluding suffix)|
 |_suffix_|Suffix to append if string gets trucated|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1083,7 +1083,7 @@ somettest
 |_limit_|Number of words in final string(excluding suffix)|
 |_suffix_|Suffix to append if string gets trucated|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1118,7 +1118,7 @@ something wickedtest
 |**Parameters**||
 |_str_|input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1149,7 +1149,7 @@ SOMETHING
 |**Parameters**||
 |_str_|Base64 encoded string to decode|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1180,7 +1180,7 @@ something wicked this way comes
 |**Parameters**||
 |_str_|String to Baes64 encode|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1211,7 +1211,7 @@ c29tZXRoaW5nIHdpY2tlZCB0aGlzIHdheSBjb21lcw==
 |**Parameters**||
 |_str_|Uri encoded string|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1242,7 +1242,7 @@ arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurldecodeuri
 |**Parameters**||
 |_str_|String to encode|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1273,7 +1273,7 @@ arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
 |**Parameters**||
 |_str_|Url to remove protocol from|
 
-#### Example
+### Example
 **Context**
 ``` json
 {

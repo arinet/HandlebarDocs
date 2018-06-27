@@ -83,7 +83,7 @@
 |_operatorType_|Operator to perform, if not specified will default to =.  Supported operators are =, !=, <, <=, >, >=|
 |_rvalue_|Right object|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -135,7 +135,7 @@
 |_expression_|Expression to filter by|
 |_ignoreCase_|Whether or not to ignore case, defaults to false|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -302,7 +302,7 @@
 |_input_|Object to pull from|
 |_lookup_|Key to look for|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -383,7 +383,7 @@
 |_delimiter_|Delimiter to parse path with, defaults to /|
 |_offset_|Offset to start key/value pair loading, defaults to 0|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -540,7 +540,7 @@
 |_path_|Path to pull info from|
 |_extension_|Extension to look for|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -585,7 +585,7 @@
 |_delimiter_|Delimiter to parse path with, defaults to /|
 |_offset_|Offset to start key/value pair loading, defaults to 0|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -644,7 +644,7 @@
 |_segment_|Segment to look for|
 |_delimiter_|Delimiter to parse path with, defaults to /|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -693,7 +693,7 @@
 |**Parameters**||
 |_path_|Path to pull info from|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -787,7 +787,7 @@
 |_str_|Input|
 |_pattern_|Regex pattern|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -838,7 +838,7 @@
 |_match_|String to match|
 |_ignoreCase_|Whether or not to ignore case, defaults to false|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -897,7 +897,7 @@
 |_suffix_|String to match|
 |_ignoreCase_|Whether or not to ignore case, defaults to false|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -954,7 +954,7 @@
 |**Parameters**||
 |_value_|Input|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1025,7 +1025,7 @@
 |_str_|Base string|
 |_ch_|Delimiter|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
@@ -1070,7 +1070,7 @@
 |_prefix_|String to match|
 |_ignoreCase_|Whether or not to ignore case, defaults to false|
 
-#### Example
+### Example
 **Context**
 ``` json
 {
