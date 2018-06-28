@@ -61,8 +61,8 @@ Block helpers are identified by a # preceeding the helper name and require a mat
 ```
 
 see:
-* [Build in block helpers](#builtinHelpers.md)
-* [Custom block helpers](#customBlockHelpers.md)
+* [Built-in block helpers](builtinHelpers.md)
+* [Custom block helpers](customBlockHelpers.md)
 
 ---
 ## Sub Expressions
