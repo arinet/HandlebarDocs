@@ -21,9 +21,9 @@ Handlebars is built upon the [mustache expression engine](http://mustache.github
 
 ## [Built-in Helpers](docs/builtinHelpers.md)
 * [if](docs/builtinHelpers.md#if)
-* [unless](docs/builtinHelpers.md#if)
-* [each](docs/builtinHelpers.md#if)
-* [with](docs/builtinHelpers.md#if)
+* [unless](docs/builtinHelpers.md#unless)
+* [each](docs/builtinHelpers.md#each)
+* [with](docs/builtinHelpers.md#with)
 
 ## [Custom Helpers](docs/customHelpers.md)
 * [HTML](docs/customHelpers/html.md)
