@@ -230,7 +230,7 @@ These block helpers allow for querying, filtering, and comparing objects.
 |||
 |-|-|
 |**Summary**|Pull object by key or index from a dynamic object or array|
-|**Returns**|Object or array that is found|
+|**Returns**|Object that is found|
 |**Remarks**||
 |||
 |**Parameters**||
