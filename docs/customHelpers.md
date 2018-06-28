@@ -22,7 +22,7 @@
 * [Object](customHelpers/object.md)
     * [Helpers.Object.GetLength](customHelpers/object.md#helpersobjectgetlength)
 * [Path](customHelpers/path.md)
-    * [Helpers.Path.GetAbsolutePath](v#helperspathgetabsolutepath)
+    * [Helpers.Path.GetAbsolutePath](customHelpers/path.md#helperspathgetabsolutepath)
     * [Helpers.Path.GetDirectory](customHelpers/path.md#helperspathgetdirectory)
     * [Helpers.Path.GetExtension](customHelpers/path.md#helperspathgetextension)
     * [Helpers.Path.GetFilename](customHelpers/path.md#helperspathgetfilename)
