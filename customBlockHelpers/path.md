@@ -182,7 +182,7 @@ These block helpers allow for querying and parsing paths.
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md"
 }
 ```
 **Usage**
@@ -286,7 +286,7 @@ These block helpers allow for querying and parsing paths.
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md"
 }
 ```
 **Usage**
