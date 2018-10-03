@@ -63,7 +63,7 @@
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md#helpershtmlescape"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpershtmlescape"
 }
 ```
 **Usage**
@@ -548,7 +548,7 @@ Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 <strong>result:</strong>
 {{Helpers.Path.GetAbsolutePath a}}
 {{Helpers.Path.GetAbsolutePath b "_"}}
-{{Helpers.Path.GetAbsolutePath "arinet/HandlebarDocs/blob/master/docs/helpers.md"}}
+{{Helpers.Path.GetAbsolutePath "arinet/HandlebarDocs/blob/master/helpers.md"}}
 ```
 **Returns**
 ``` html
@@ -583,7 +583,7 @@ _first_second_third
 <strong>result:</strong>
 {{Helpers.Path.GetDirectory a}}
 {{Helpers.Path.GetDirectory b "_"}}
-{{Helpers.Path.GetDirectory "arinet/HandlebarDocs/blob/master/docs/helpers.md"}}
+{{Helpers.Path.GetDirectory "arinet/HandlebarDocs/blob/master/helpers.md"}}
 ```
 **Returns**
 ``` html
@@ -618,7 +618,7 @@ docs
 <strong>result:</strong>
 {{Helpers.Path.GetExtension a}}
 {{Helpers.Path.GetExtension b "_"}}
-{{Helpers.Path.GetExtension "arinet/HandlebarDocs/blob/master/docs/helpers.md"}}
+{{Helpers.Path.GetExtension "arinet/HandlebarDocs/blob/master/helpers.md"}}
 ```
 **Returns**
 ``` html
@@ -653,7 +653,7 @@ md
 <strong>result:</strong>
 {{Helpers.Path.GetFilename a}}
 {{Helpers.Path.GetFilename b "_"}}
-{{Helpers.Path.GetFilename "arinet/HandlebarDocs/blob/master/docs/helpers.md"}}
+{{Helpers.Path.GetFilename "arinet/HandlebarDocs/blob/master/helpers.md"}}
 ```
 **Returns**
 ``` html
@@ -1227,7 +1227,7 @@ c29tZXRoaW5nIHdpY2tlZCB0aGlzIHdheSBjb21lcw==
 **Returns**
 ``` html
 <strong>result:</strong>
-arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurldecodeuri
+arinet/HandlebarDocs/blob/master/helpers.md#helpersurldecodeuri
 /search/inventory/brand/Polaris Industries/sort/best-match
 ```
 
@@ -1246,7 +1246,7 @@ arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurldecodeuri
 **Context**
 ``` json
 {
-    "value": "arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurlencodeuri"
+    "value": "arinet/HandlebarDocs/blob/master/helpers.md#helpersurlencodeuri"
 }
 ```
 **Usage**
@@ -1277,7 +1277,7 @@ arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurlstripprotocol"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpersurlstripprotocol"
 }
 ```
 **Usage**
@@ -1289,6 +1289,6 @@ arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
 **Returns**
 ``` html
 <strong>result:</strong>
-//github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurlstripprotocol
+//github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpersurlstripprotocol
 //www.duluthlawnandsport.com/s/search/inventory/brand/Polaris%20Industries/sort/best-match
 ```

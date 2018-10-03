@@ -96,7 +96,7 @@ c29tZXRoaW5nIHdpY2tlZCB0aGlzIHdheSBjb21lcw==
 **Returns**
 ``` html
 <strong>result:</strong>
-arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurldecodeuri
+arinet/HandlebarDocs/blob/master/helpers.md#helpersurldecodeuri
 /search/inventory/brand/Polaris Industries/sort/best-match
 ```
 
@@ -115,7 +115,7 @@ arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurldecodeuri
 **Context**
 ``` json
 {
-    "value": "arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurlencodeuri"
+    "value": "arinet/HandlebarDocs/blob/master/helpers.md#helpersurlencodeuri"
 }
 ```
 **Usage**
@@ -146,7 +146,7 @@ arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurlstripprotocol"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpersurlstripprotocol"
 }
 ```
 **Usage**
@@ -158,6 +158,6 @@ arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
 **Returns**
 ``` html
 <strong>result:</strong>
-//github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md#helpersurlstripprotocol
+//github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpersurlstripprotocol
 //www.duluthlawnandsport.com/s/search/inventory/brand/Polaris%20Industries/sort/best-match
 ```

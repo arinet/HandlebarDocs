@@ -19,7 +19,7 @@ These block helpers allow for performing regex operations on strings
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/docs/helpers.md"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md"
 }
 ```
 **Usage**
