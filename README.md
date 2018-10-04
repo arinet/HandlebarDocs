@@ -1,7 +1,7 @@
 ## Introduction
 Our templates run through a [Handlebar.Net](https://github.com/rexm/Handlebars.Net) templating engine which is based on [Handlebarsjs](http://handlebarsjs.com).
 
-Handlebars is built upon the [mustache expression engine](http://mustache.github.io/mustache.5.html). The operating principle of this expression engine is that you can inject model data into any arbitrary string by wrapping the object in "mustaches" ```{{}}```.
+Handlebars is built upon the [mustache expression engine](http://mustache.github.io/mustache.5.html). The operating principle of the expression engine is that you can inject model data into any arbitrary string by wrapping the object in "mustaches" ```{{}}```.
 
 ## [Expressions](expressions.md)
 * [Basic Usage](expressions.md#basic-usage)
