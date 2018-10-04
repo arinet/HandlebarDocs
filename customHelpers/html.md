@@ -20,7 +20,7 @@ These helpers provide some ability to manage strings for use within html content
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpershtmlescape"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/html.md#helpershtmlescape"
 }
 ```
 **Usage**
@@ -31,7 +31,7 @@ These helpers provide some ability to manage strings for use within html content
 **Returns**
 ``` html
 <strong>result:</strong>
-https:\/\/github.com\/arinet\/HandlebarDocs\/blob\/master\/docs\/helpers.md#helpershtmlescape
+https:\/\/github.com\/arinet\/HandlebarDocs\/blob\/master\/docs\/html.md#helpershtmlescape
 ```
 
 ---

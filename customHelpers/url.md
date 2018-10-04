@@ -84,7 +84,7 @@ c29tZXRoaW5nIHdpY2tlZCB0aGlzIHdheSBjb21lcw==
 **Context**
 ``` json
 {
-    "value": "arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurldecodeuri"
+    "value": "arinet%2FHandlebarDocs%2Fblob%2Fmaster%2FcustomHelpers%2Furl.md%23helpersurldecodeuri"
 }
 ```
 **Usage**
@@ -96,7 +96,7 @@ c29tZXRoaW5nIHdpY2tlZCB0aGlzIHdheSBjb21lcw==
 **Returns**
 ``` html
 <strong>result:</strong>
-arinet/HandlebarDocs/blob/master/helpers.md#helpersurldecodeuri
+arinet/HandlebarDocs/blob/master/customHelpers/url.md#helpersurldecodeuri
 /search/inventory/brand/Polaris Industries/sort/best-match
 ```
 
@@ -115,7 +115,7 @@ arinet/HandlebarDocs/blob/master/helpers.md#helpersurldecodeuri
 **Context**
 ``` json
 {
-    "value": "arinet/HandlebarDocs/blob/master/helpers.md#helpersurlencodeuri"
+    "value": "arinet/HandlebarDocs/blob/master/customHelpers/url.md#helpersurlencodeuri"
 }
 ```
 **Usage**
@@ -127,7 +127,7 @@ arinet/HandlebarDocs/blob/master/helpers.md#helpersurldecodeuri
 **Returns**
 ``` html
 <strong>result:</strong>
-arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
+arinet%2FHandlebarDocs%2Fblob%2Fmaster%2FcustomHelpers%2Furl.md%23helpersurlencodeuri
 %2Fsearch%2Finventory%2Fbrand%2FPolaris+Industries%2Fsort%2Fbest-match
 ```
 
@@ -146,7 +146,7 @@ arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
 **Context**
 ``` json
 {
-    "value": "https://github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpersurlstripprotocol"
+    "value": "https://github.com/arinet/HandlebarDocs/blob/master/customHelpers/url.md#helpersurlstripprotocol"
 }
 ```
 **Usage**
@@ -158,6 +158,6 @@ arinet%2FHandlebarDocs%2Fblob%2Fmaster%2Fdocs%2Fhelpers.md%23helpersurlencodeuri
 **Returns**
 ``` html
 <strong>result:</strong>
-//github.com/arinet/HandlebarDocs/blob/master/helpers.md#helpersurlstripprotocol
+//github.com/arinet/HandlebarDocs/blob/master/customHelpers/url.md#helpersurlstripprotocol
 //www.duluthlawnandsport.com/s/search/inventory/brand/Polaris%20Industries/sort/best-match
 ```

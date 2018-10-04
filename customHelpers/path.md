@@ -31,7 +31,7 @@ These helpers provide the ability to parse paths.
 <strong>result:</strong>
 {{Helpers.Path.GetAbsolutePath a}}
 {{Helpers.Path.GetAbsolutePath b "_"}}
-{{Helpers.Path.GetAbsolutePath "arinet/HandlebarDocs/blob/master/helpers.md"}}
+{{Helpers.Path.GetAbsolutePath "arinet/HandlebarDocs/blob/master/customHelpers.md"}}
 ```
 **Returns**
 ``` html
@@ -66,7 +66,7 @@ _first_second_third
 <strong>result:</strong>
 {{Helpers.Path.GetDirectory a}}
 {{Helpers.Path.GetDirectory b "_"}}
-{{Helpers.Path.GetDirectory "arinet/HandlebarDocs/blob/master/helpers.md"}}
+{{Helpers.Path.GetDirectory "arinet/HandlebarDocs/blob/master/customHelpers.md"}}
 ```
 **Returns**
 ``` html
@@ -101,7 +101,7 @@ docs
 <strong>result:</strong>
 {{Helpers.Path.GetExtension a}}
 {{Helpers.Path.GetExtension b "_"}}
-{{Helpers.Path.GetExtension "arinet/HandlebarDocs/blob/master/helpers.md"}}
+{{Helpers.Path.GetExtension "arinet/HandlebarDocs/blob/master/customHelpers.md"}}
 ```
 **Returns**
 ``` html
@@ -136,7 +136,7 @@ md
 <strong>result:</strong>
 {{Helpers.Path.GetFilename a}}
 {{Helpers.Path.GetFilename b "_"}}
-{{Helpers.Path.GetFilename "arinet/HandlebarDocs/blob/master/helpers.md"}}
+{{Helpers.Path.GetFilename "arinet/HandlebarDocs/blob/master/customHelpers.md"}}
 ```
 **Returns**
 ``` html
