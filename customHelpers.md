@@ -1,8 +1,15 @@
 # Custom Helpers
-> These helpers all return values inline; when you reference one, its reference gets replaced by the resulting value.
+>These helpers all return values inline; when you reference one, its reference gets replaced by the resulting value.
 >
->For example: `<strong>{{Helper.String.Uppercase "some string"}}</strong>` would return `<strong>SOME STRING</strong>`
-
+>For example: 
+>``` handlebars
+><strong>{{Helper.String.Uppercase "some string"}}</strong>
+>```
+>would return 
+>``` html
+><strong>SOME STRING</strong>
+>```
+>&nbsp;
 ---
 * [HTML](customHelpers/html.md)
     * [Helpers.Html.Escape](customHelpers/html.md#helpershtmlescape)
