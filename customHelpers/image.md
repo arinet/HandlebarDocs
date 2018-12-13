@@ -14,6 +14,29 @@ These helpers provide some ability to manage existing image urls.
 |||
 |**Parameters**||
 |_input_|Image url to manipulate|
+|_arguments_|List of available arguments are below|
+|||
+
+### Available Arguments
+|**_Flags_**||
+|-|-|
+|c, crop|Crop the image to width and height specified.  Acceptable values are 1 or 0.|
+|cc, cropCenter|Center the crop rectangle before cropping.  Acceptable values are 1 or 0.|
+|f, fill|Instead of resizing, fill any overflow. Default color if not specified is transparent if the image has an Alpha channel, otherwise white.  Acceptable values are 1 or 0.|
+|fz, fillZoom|Resize image first, then fill any overflow.  Using this requires using both width/height and maxWidth/maxHeight.  Acceptable values are 1 or 0.|
+
+|**_Options_**||
+|-|-|
+|fc, fillColor|Hex code that corresponds to the html color code used when overflows are being filled.|
+|q, quality|Quality [0-100] of the resized image.  Applies when resizing.|
+|||
+
+|**_Dimensions_**||
+|-|-|
+|w, width|Width of the image. Aspect ratio will be maintained if no height is specified.  If max height is specified but is smaller than the resized yet maintained aspect ratio, the image will resize to a height of maxHeight.|
+|h, height|Height of the image. Aspect ratio will be maintained if no width is specified.  If max width is specified but is smaller than the resized yet maintained aspect ratio, the image will resize to a width of maxWidth.|
+|mw, maxWidth|Max width of the image.  This sets and upper bound to the size of the image.|
+|mh, maxHeight|Max height of the image. This sets and upper bound to the size of the image.|
 |||
 
 ### Example
