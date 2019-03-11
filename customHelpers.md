@@ -31,6 +31,7 @@
     * [Helpers.Number.FormatPrice](customHelpers/number.md#helpersnumberformatprice)
 * [Object](customHelpers/object.md)
     * [Helpers.Object.GetLength](customHelpers/object.md#helpersobjectgetlength)
+    * [Helpers.Object.ToJson](customHelpers/object.md#helpersobjecttojson)
 * [Path](customHelpers/path.md)
     * [Helpers.Path.GetAbsolutePath](customHelpers/path.md#helperspathgetabsolutepath)
     * [Helpers.Path.GetDirectory](customHelpers/path.md#helperspathgetdirectory)

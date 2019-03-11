@@ -2,6 +2,7 @@
 These helpers provide some ability to query and manage objects.
 
 * [Helpers.Object.GetLength](#helpersobjectgetlength)
+* [Helpers.Object.ToJson](#helpersobjecttojson)
 
 ---
 ## Helpers.Object.GetLength
@@ -51,4 +52,48 @@ These helpers provide some ability to query and manage objects.
 2
 1
 2
+```
+
+---
+## Helpers.Object.ToJson
+|||
+|-|-|
+|**Summary**|Gets a serilized json representation of the object passed in|
+|**Returns**|Json object representing input|
+|**Remarks**|If input is null, this will return null|
+|||
+|**Parameters**||
+|_input_|Object to serialize|
+
+### Example
+**Context**
+``` json
+{
+    "a": [],
+    "b": [
+        "one",
+        "two"
+    ],
+    "c": [
+        1
+    ],
+    "d": [
+        {
+            "id": 1
+        },
+        {
+            "id": 2
+        }
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Object.ToJson d}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+[{"id":1},{"id":2}]
 ```
