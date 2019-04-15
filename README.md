@@ -42,7 +42,8 @@ Handlebars is built upon the [mustache expression engine](http://mustache.github
 * [String](customBlockHelpers/string.md)
 
 ## [Other Functionality](otherFunctionality.md)
-* [Literals](otherFunctionality.md#literals)
 * [Comments](otherFunctionality.md#comments)
-* [Paths](otherFunctionality.md#paths)
 * [HTML Escaping](expressions.md#gotchas)
+* [Inline Partials](otherFunctionality.md#inline-partials)
+* [Literals](otherFunctionality.md#literals)
+* [Paths](otherFunctionality.md#paths)
