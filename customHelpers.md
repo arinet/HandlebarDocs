@@ -11,6 +11,8 @@
 >```
 >&nbsp;
 ---
+* [Date](customHelpers/date.md)
+    * [Helpers.Date.Format](customHelpers/date.md#helpersdateformat)
 * [HTML](customHelpers/html.md)
     * [Helpers.Html.Escape](customHelpers/html.md#helpershtmlescape)
     * [Helpers.Html.HtmlDecode](customHelpers/html.md#helpershtmlhtmldecode)
