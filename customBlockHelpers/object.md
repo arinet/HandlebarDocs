@@ -2,8 +2,14 @@
 These block helpers allow for querying, filtering, and comparing objects.
 
 * [Helpers.Object.Compare](#helpersobjectcompare)
+* [Helpers.Object.Distinct](#helpersobjectdistinct)
 * [Helpers.Object.Filter](#helpersobjectfilter)
+* [Helpers.Object.IsFirst](#helpersobjectisfirst)
+* [Helpers.Object.IsLast](#helpersobjectislast)
 * [Helpers.Object.Lookup](#helpersobjectlookup)
+* [Helpers.Object.Page](#helpersobjectpage)
+* [Helpers.Object.Skip](#helpersobjectskip)
+* [Helpers.Object.Take](#helpersobjecttake)
 
 ---
 ## Helpers.Object.Compare
@@ -53,6 +59,71 @@ These block helpers allow for querying, filtering, and comparing objects.
 <strong>False</strong>
 
 <strong>True</strong>
+
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.Distinct
+|||
+|-|-|
+|**Summary**|Return a collection of distinct elements from an array|
+|**Returns**|Updated collection of distinct elements|
+|**Remarks**|If object is not an array, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+|||
+|**Parameters**||
+|_array_|Array of objects to make distinct|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "two",
+        "two",
+        "three"
+    ],
+    "badInput": {
+        "something": true
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{#Helpers.Object.Distinct array}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Distinct}}
+
+{{#Helpers.Object.Distinct badInput}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Distinct}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: one</li>
+    <li>Value: two</li>
+    <li>Value: three</li>
+<ul>
 
 <strong>False</strong>
 ```
@@ -226,6 +297,98 @@ These block helpers allow for querying, filtering, and comparing objects.
 ```
 
 ---
+## Helpers.Object.IsFirst
+|||
+|-|-|
+|**Summary**|Determine whether or not the object passed in is the first element in the passed in array|
+|**Returns**|Whether or not the object is the first element in the array|
+|**Remarks**||
+|||
+|**Parameters**||
+|_array_|Array of objects to inspect|
+|_object_|Object to match on|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "three"
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{#Helpers.Object.IsFirst array "one"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.IsFirst}}
+
+{{#Helpers.Object.IsFirst array "two"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.IsFirst}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+<strong>True</strong>
+
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.IsLast
+|||
+|-|-|
+|**Summary**|Determine whether or not the object passed in is the last element in the passed in array|
+|**Returns**|Whether or not the object is the last element in the array|
+|**Remarks**||
+|||
+|**Parameters**||
+|_array_|Array of objects to inspect|
+|_object_|Object to match on|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "three"
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{#Helpers.Object.IsLast array "one"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.IsLast}}
+
+{{#Helpers.Object.IsLast array "three"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.IsLast}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+<strong>False</strong>
+
+<strong>True</strong>
+```
+
+---
 ## Helpers.Object.Lookup
 |||
 |-|-|
@@ -302,4 +465,221 @@ These block helpers allow for querying, filtering, and comparing objects.
 <ul>
     <li>Failed to find match</li>
 </ul>
+```
+
+---
+## Helpers.Object.Page
+|||
+|-|-|
+|**Summary**|Return a collection of elements from an array, skipping N elements|
+|**Returns**|A single page worth of elements|
+|**Remarks**|If object is not an array, if page number is not passed in, or if page number or countPerPage are <= 0, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+|||
+|**Parameters**||
+|_array_|Array of objects to evaluate|
+|_pageNumber_|Page number|
+|_countPerPage_|Number of elements per page, default 0|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+    ],
+    "badInput": {
+        "something": true
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{#Helpers.Object.Page array 2 2}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Page}}
+
+{{#Helpers.Object.Page badInput 1 3}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Page}}
+
+{{#Helpers.Object.Page array 1 -1}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Page}}
+
+{{#Helpers.Object.Page array 0 2}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Page}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: three</li>
+    <li>Value: four</li>
+<ul>
+
+<strong>False</strong>
+
+<strong>False</strong>
+
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.Skip
+|||
+|-|-|
+|**Summary**|Return a collection of elements from an array, skipping N elements|
+|**Returns**|Collection of elements, minus the ones that were skipped|
+|**Remarks**|If object is not an array, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+|||
+|**Parameters**||
+|_array_|Array of objects to evaluate|
+|_skipN_|Number of elements to skip|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "three"
+    ],
+    "badInput": {
+        "something": true
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{#Helpers.Object.Skip array 2}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Skip}}
+
+{{#Helpers.Object.Skip badInput 1}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Skip}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: three</li>
+<ul>
+
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.Take
+|||
+|-|-|
+|**Summary**|Return a collection of N elements from an array|
+|**Returns**|Collection of N elements|
+|**Remarks**|If object is not an array, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+|||
+|**Parameters**||
+|_array_|Array of objects to evaluate|
+|_takeN_|Number of elements to return|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "three"
+    ],
+    "badInput": {
+        "something": true
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{#Helpers.Object.Take array 2}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Take}}
+
+{{#Helpers.Object.Take badInput 1}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    <ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Take}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: one</li>
+    <li>Value: two</li>
+<ul>
+
+<strong>False</strong>
 ```

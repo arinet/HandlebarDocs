@@ -30,6 +30,7 @@
 * [Number](customHelpers/number.md)
     * [Helpers.Number.FormatPrice](customHelpers/number.md#helpersnumberformatprice)
 * [Object](customHelpers/object.md)
+    * [Helpers.Object.GetIndex](customHelpers/object.md#helpersobjectgetindex)
     * [Helpers.Object.GetLength](customHelpers/object.md#helpersobjectgetlength)
     * [Helpers.Object.ToJson](customHelpers/object.md#helpersobjecttojson)
 * [Path](customHelpers/path.md)
