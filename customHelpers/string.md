@@ -3,6 +3,7 @@ These helpers provide some ability to do string manipulation.
 
 * [Helpers.String.Append](#helpersstringappend)
 * [Helpers.String.Ellipsis](#helpersstringellipsis)
+* [Helpers.String.Join](#helpersstringjoin)
 * [Helpers.String.Lowercase](#helpersstringlowercase)
 * [Helpers.String.Occurrences](#helpersstringoccurrences)
 * [Helpers.String.Prepend](#helpersstringprepend)
@@ -81,6 +82,48 @@ something or another
 <strong>result:</strong>
 Lorem ipsu...
 somet...
+```
+
+---
+## Helpers.String.Join
+|||
+|-|-|
+|**Summary**|Join multiple strings together separated by the specified separator|
+|**Returns**|Joined string|
+|**Remarks**|Can be passed either an array of strings or a set of strings as arguments|
+|||
+|**Parameters**||
+|_strArray_|strings to join|
+|_separator_|Separator to used to delimit strings, default is an empty string|
+
+### Example
+**Context**
+``` json
+{
+    "stringArray": [
+        "Lorem",
+        "ipsum",
+        "dolor",
+        "sit",
+        "amet"
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.String.Join stringArray " "}}
+{{Helpers.String.Join stringArray}}
+{{Helpers.String.Ellipsis "Lorem" "ipsum" "dolor" "sit" "amet" " "}}
+{{Helpers.String.Ellipsis "Lorem" "ipsum" "dolor" "sit" "amet"}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+Lorem ipsum dolor sit amet
+Loremipsumdolorsitamet
+Lorem ipsum dolor sit amet
+Loremipsumdolorsitamet
 ```
 
 ---

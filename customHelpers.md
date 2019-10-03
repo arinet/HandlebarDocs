@@ -40,6 +40,7 @@
 * [String](customHelpers/string.md)
     * [Helpers.String.Append](customHelpers/string.md#helpersstringappend)
     * [Helpers.String.Ellipsis](customHelpers/string.md#helpersstringellipsis)
+    * [Helpers.String.Join](customHelpers/string.md#helpersstringjoin)
     * [Helpers.String.Lowercase](customHelpers/string.md#helpersstringlowercase)
     * [Helpers.String.Occurrences](customHelpers/string.md#helpersstringoccurrences)
     * [Helpers.String.Prepend](customHelpers/string.md#helpersstringprepend)
