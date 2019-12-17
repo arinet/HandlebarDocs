@@ -73,7 +73,7 @@ _first_second_third
 <strong>result:</strong>
 third
 third
-docs
+master
 ```
 
 ---
