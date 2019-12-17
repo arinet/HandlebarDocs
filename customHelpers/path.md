@@ -143,5 +143,5 @@ master
 <strong>result:</strong>
 somefile.txt
 somefile.txt
-helpers.md
+customHelpers.md
 ```
