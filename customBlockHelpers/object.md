@@ -248,13 +248,13 @@ These block helpers allow for querying, filtering, and comparing objects.
     <li>Key: name, Value: test-1</li>
     <li>Key: type, Value: thing</li>
     <li>Key: moreData, Value: more</li>
-    <li>Key: meta, Value: System.Dynamic.ExpandoObject</li>
+    <li>Key: meta, Value: System.Dynamic.System.Collections.Generic.Dictionary`2[System.String,System.Object]</li>
 
     <li>Key: id, Value: 2</li>
     <li>Key: name, Value: test-2</li>
     <li>Key: type, Value: thing</li>
     <li>Key: price, Value: 100</li>
-    <li>Key: meta, Value: System.Dynamic.ExpandoObject</li>
+    <li>Key: meta, Value: System.Dynamic.System.Collections.Generic.Dictionary`2[System.String,System.Object]</li>
 </ul>
 
 <ul>
@@ -262,13 +262,13 @@ These block helpers allow for querying, filtering, and comparing objects.
     <li>Key: name, Value: test-1</li>
     <li>Key: type, Value: thing</li>
     <li>Key: moreData, Value: more</li>
-    <li>Key: meta, Value: System.Dynamic.ExpandoObject</li>
+    <li>Key: meta, Value: System.Dynamic.System.Collections.Generic.Dictionary`2[System.String,System.Object]</li>
 
     <li>Key: id, Value: 2</li>
     <li>Key: name, Value: test-2</li>
     <li>Key: type, Value: thing</li>
     <li>Key: price, Value: 100</li>
-    <li>Key: meta, Value: System.Dynamic.ExpandoObject</li>
+    <li>Key: meta, Value: System.Dynamic.System.Collections.Generic.Dictionary`2[System.String,System.Object]</li>
 </ul>
 
 <ul>
@@ -280,7 +280,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     <li>Key: name, Value: test-2</li>
     <li>Key: type, Value: thing</li>
     <li>Key: price, Value: 100</li>
-    <li>Key: meta, Value: System.Dynamic.ExpandoObject</li>
+    <li>Key: meta, Value: System.Dynamic.System.Collections.Generic.Dictionary`2[System.String,System.Object]</li>
 </ul>
 
 <ul>
@@ -288,7 +288,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     <li>Key: name, Value: test-2</li>
     <li>Key: type, Value: thing</li>
     <li>Key: price, Value: 100</li>
-    <li>Key: meta, Value: System.Dynamic.ExpandoObject</li>
+    <li>Key: meta, Value: System.Dynamic.System.Collections.Generic.Dictionary`2[System.String,System.Object]</li>
 
     <li>Key: id, Value: 3</li>
     <li>Key: name, Value: test-3</li>
