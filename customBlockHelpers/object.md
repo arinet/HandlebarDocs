@@ -215,7 +215,7 @@ These block helpers allow for querying, filtering, and comparing objects.
 </ul>
 
 <ul>
-    {{#Helpers.Object.Filter objects "meta.name=Data AND price > 10" true}}
+    {{#Helpers.Object.Filter objects "meta.name=data AND price > 10" true}}
         {{#each this}}
             {{#each this}}
                 <li>Key: {{@key}}, Value: {{this}}</li>
@@ -228,7 +228,7 @@ These block helpers allow for querying, filtering, and comparing objects.
 </ul>
 
 <ul>
-    {{#Helpers.Object.Filter objects "(meta.name=Data AND price > 10) OR id = 3" true}}
+    {{#Helpers.Object.Filter objects "(meta.name=data AND price > 10) OR id = 3" true}}
         {{#each this}}
             {{#each this}}
                 <li>Key: {{@key}}, Value: {{this}}</li>
