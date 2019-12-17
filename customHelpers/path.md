@@ -38,7 +38,7 @@ These helpers provide the ability to parse paths.
 <strong>result:</strong>
 /first/second/third
 _first_second_third
-/arinet/HandlebarDocs/blob/master/docs
+/arinet/HandlebarDocs/blob/master
 ```
 
 ---
