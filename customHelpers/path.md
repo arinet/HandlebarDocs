@@ -106,9 +106,9 @@ master
 **Returns**
 ``` html
 <strong>result:</strong>
-txt
-txt
-md
+.txt
+.txt
+.md
 ```
 
 ---
