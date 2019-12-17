@@ -11,6 +11,8 @@
 >```
 >&nbsp;
 ---
+* [Date](customHelpers/date.md)
+    * [Helpers.Date.Format](customHelpers/date.md#helpersdateformat)
 * [HTML](customHelpers/html.md)
     * [Helpers.Html.Escape](customHelpers/html.md#helpershtmlescape)
     * [Helpers.Html.HtmlDecode](customHelpers/html.md#helpershtmlhtmldecode)
@@ -30,6 +32,7 @@
 * [Number](customHelpers/number.md)
     * [Helpers.Number.FormatPrice](customHelpers/number.md#helpersnumberformatprice)
 * [Object](customHelpers/object.md)
+    * [Helpers.Object.GetIndex](customHelpers/object.md#helpersobjectgetindex)
     * [Helpers.Object.GetLength](customHelpers/object.md#helpersobjectgetlength)
     * [Helpers.Object.ToJson](customHelpers/object.md#helpersobjecttojson)
 * [Path](customHelpers/path.md)
@@ -40,6 +43,7 @@
 * [String](customHelpers/string.md)
     * [Helpers.String.Append](customHelpers/string.md#helpersstringappend)
     * [Helpers.String.Ellipsis](customHelpers/string.md#helpersstringellipsis)
+    * [Helpers.String.Join](customHelpers/string.md#helpersstringjoin)
     * [Helpers.String.Lowercase](customHelpers/string.md#helpersstringlowercase)
     * [Helpers.String.Occurrences](customHelpers/string.md#helpersstringoccurrences)
     * [Helpers.String.Prepend](customHelpers/string.md#helpersstringprepend)

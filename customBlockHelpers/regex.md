@@ -106,11 +106,11 @@ These block helpers allow for performing regex operations on strings
   <strong>True</strong>
   ```
 
-  It's especially handy to use the RegexOptions.IgnoreCase flag when using character classes: [a-zA-Z] can then be shortened to [a-z]. If you need to do a case-insensitive match, specifying this flag helps you write clearer, shorter, and more readable patterns.
+  It's especially handy to use the IgnoreCase flag when using character classes: `[a-zA-Z]` can then be shortened to `[a-z]`. If you need to do a case-insensitive match, specifying this flag helps you write clearer, shorter, and more readable patterns.
 
 * **Multiline**
 
-  The Multiline flag changes the meaning of the special characters ^ and $. Usually, they match at the beginning (^) and the end ($) of the entire string. With Multiline applied, they match at the beginning or end of any line of the input string.
+  The Multiline flag changes the meaning of the special characters `^` and `$`. Usually, they match at the beginning `^` and the end `$` of the entire string. With Multiline applied, they match at the beginning or end of any line of the input string.
 
   Here's how you could use Multiline to check whether some multi-line string (e.g. from a text file) contains a line that only consists of digits:
 
@@ -144,9 +144,9 @@ These block helpers allow for performing regex operations on strings
 
 * **Singleline**
 
-  Singleline changes the meaning of the dot (.), which matches every character except \n. With the Singleline flag set, the dot will match every character.
+  Singleline changes the meaning of the dot (`.`), which matches every character except `\n`. With the Singleline flag set, the dot will match every character.
 
-  Sometimes, you'll see people use a pattern like [\d\D] to mean "any character". Such a pattern is a tautology, that is, it's universally true — every character will either be or not be a digit. It has the same behavior as the dot with Singleline specified.
+  Sometimes, you'll see people use a pattern like `[\d\D]` to mean "any character". Such a pattern is a tautology, that is, it's universally true — every character will either be or not be a digit. It has the same behavior as the dot with Singleline specified.
 
   **Context**
   ``` json

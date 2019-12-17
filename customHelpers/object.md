@@ -1,8 +1,45 @@
 # Custom Object Helpers
 These helpers provide some ability to query and manage objects.
 
+* [Helpers.Object.GetIndex](#helpersobjectgetindex)
 * [Helpers.Object.GetLength](#helpersobjectgetlength)
 * [Helpers.Object.ToJson](#helpersobjecttojson)
+
+---
+## Helpers.Object.GetIndex
+|||
+|-|-|
+|**Summary**|Gets the index of an object in an array|
+|**Returns**|The index of the object if found|
+|**Remarks**|If input is not an array, this will return nothing|
+|||
+|**Parameters**||
+|_input_|Array to get index of|
+|_object_|Object to lookup index of|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "three"
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Object.GetIndex array "two"}}
+{{Helpers.Object.GetIndex array "one"}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+1
+0
+```
 
 ---
 ## Helpers.Object.GetLength
