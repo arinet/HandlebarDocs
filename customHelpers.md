@@ -34,6 +34,8 @@
 * [Object](customHelpers/object.md)
     * [Helpers.Object.GetIndex](customHelpers/object.md#helpersobjectgetindex)
     * [Helpers.Object.GetLength](customHelpers/object.md#helpersobjectgetlength)
+    * [Helpers.Object.Max](customHelpers/object.md#helpersobjectmax)
+    * [Helpers.Object.Min](customHelpers/object.md#helpersobjectmin)
     * [Helpers.Object.ToJson](customHelpers/object.md#helpersobjecttojson)
 * [Path](customHelpers/path.md)
     * [Helpers.Path.GetAbsolutePath](customHelpers/path.md#helperspathgetabsolutepath)
