@@ -3,6 +3,8 @@ These helpers provide some ability to query and manage objects.
 
 * [Helpers.Object.GetIndex](#helpersobjectgetindex)
 * [Helpers.Object.GetLength](#helpersobjectgetlength)
+* [Helpers.Object.Max](#helpersobjectmax)
+* [Helpers.Object.Min](#helpersobjectmin)
 * [Helpers.Object.ToJson](#helpersobjecttojson)
 
 ---
@@ -89,6 +91,170 @@ These helpers provide some ability to query and manage objects.
 2
 1
 2
+```
+
+---
+## Helpers.Object.Max
+|||
+|-|-|
+|**Summary**|Returns the maximum value of a property inside of an array of objects|
+|**Returns**|The maximum value found|
+|**Remarks**|If input is not an array, this will return nothing|
+||If no property is passed in, this will return the maximum value of the array that is passed in|
+|||
+|**Parameters**||
+|_input_|Array to search|
+|_property_|Property to match on|
+
+### Example 1
+**Context**
+``` json
+{
+    "array": [
+        1,
+        2,
+        3
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Object.Max array}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+3
+```
+
+### Example 2
+**Context**
+``` json
+{
+    "array": [
+        {
+            "id": 1,
+            "name": "test1",
+            "type": {
+                "id": 4,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 2,
+            "name": "test2",
+            "type": {
+                "id": 5,
+                "name": "type2"
+            }
+        },
+        {
+            "id": 3,
+            "name": "test3",
+            "type": {
+                "id": 6,
+                "name": "type3"
+            }
+        }
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Object.Max array "id"}}
+{{Helpers.Object.Max array "type.id"}}
+{{Helpers.Object.Max array "type.name"}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+3
+6
+type3
+```
+
+---
+## Helpers.Object.Min
+|||
+|-|-|
+|**Summary**|Returns the minimum value of a property inside of an array of objects|
+|**Returns**|The minimum value found|
+|**Remarks**|If input is not an array, this will return nothing|
+||If no property is passed in, this will return the minimum value of the array that is passed in|
+|||
+|**Parameters**||
+|_input_|Array to search|
+|_property_|Property to match on|
+
+### Example 1
+**Context**
+``` json
+{
+    "array": [
+        1,
+        2,
+        3
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Object.Min array}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+1
+```
+
+### Example 2
+**Context**
+``` json
+{
+    "array": [
+        {
+            "id": 1,
+            "name": "test1",
+            "type": {
+                "id": 4,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 2,
+            "name": "test2",
+            "type": {
+                "id": 5,
+                "name": "type2"
+            }
+        },
+        {
+            "id": 3,
+            "name": "test3",
+            "type": {
+                "id": 6,
+                "name": "type3"
+            }
+        }
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Object.Min array "id"}}
+{{Helpers.Object.Min array "type.id"}}
+{{Helpers.Object.Min array "type.name"}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+1
+4
+type1
 ```
 
 ---

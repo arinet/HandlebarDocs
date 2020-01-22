@@ -3,12 +3,18 @@ These block helpers allow for querying, filtering, and comparing objects.
 
 * [Helpers.Object.Compare](#helpersobjectcompare)
 * [Helpers.Object.Distinct](#helpersobjectdistinct)
+* [Helpers.Object.DistinctBy](#helpersobjectdistinctby)
 * [Helpers.Object.Filter](#helpersobjectfilter)
 * [Helpers.Object.IsFirst](#helpersobjectisfirst)
 * [Helpers.Object.IsLast](#helpersobjectislast)
 * [Helpers.Object.Lookup](#helpersobjectlookup)
+* [Helpers.Object.OrderBy](#helpersobjectorderby)
+* [Helpers.Object.OrderByDescending](#helpersobjectorderbydescending)
 * [Helpers.Object.Page](#helpersobjectpage)
+* [Helpers.Object.Reverse](#helpersobjectreverse)
+* [Helpers.Object.Select](#helpersobjectselect)
 * [Helpers.Object.Skip](#helpersobjectskip)
+* [Helpers.Object.Sort](#helpersobjectsort)
 * [Helpers.Object.Take](#helpersobjecttake)
 
 ---
@@ -99,7 +105,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Distinct}}
@@ -110,7 +116,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Distinct}}
@@ -123,8 +129,164 @@ These block helpers allow for querying, filtering, and comparing objects.
     <li>Value: one</li>
     <li>Value: two</li>
     <li>Value: three</li>
-<ul>
+</ul>
 
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.DistinctBy
+|||
+|-|-|
+|**Summary**|Return a collection of distinct properties from an array|
+|**Returns**|Updated collection of distinct elements|
+|**Remarks**|If input is not an array, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+||If property is not found, this will return an empty array|
+||If property exists in some elements, but not others, this will return only those elements that contain the property|
+|||
+|**Parameters**||
+|_input_|Array of objects to make distinct|
+|_property_|Property to match on|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        {
+            "id": 1,
+            "name": "test1",
+            "type": {
+                "id": 5,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 2,
+            "name": "test2",
+            "type": {
+                "id": 5,
+                "name": "type1",
+                "color": "blue"
+            }
+        },
+        {
+            "id": 3,
+            "name": "test2",
+            "type": {
+                "id": 6,
+                "name": "type2",
+                "color": "red"
+            }
+        },
+        {
+            "id": 4,
+            "name": "test3",
+            "type": {
+                "id": 7,
+                "name": "type3",
+                "color": "red"               
+            }
+        }
+    ],
+    "notArray": {
+        "id": 1
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>Direct Property:</strong>
+{{#Helpers.Object.DistinctBy array "name"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.DistinctBy}}
+
+<strong>Nested Property:</strong>
+{{#Helpers.Object.DistinctBy array "type.id"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.type.id}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.DistinctBy}}
+
+<strong>Property Doesen't Exist:</strong>
+{{#Helpers.Object.DistinctBy array "doesnotexist"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.id}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.DistinctBy}}
+
+<strong>Property Exists in Some Elements:</strong>
+{{#Helpers.Object.DistinctBy array "type.color"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.id}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.DistinctBy}}
+
+<strong>Input Not an Array:</strong>
+{{#Helpers.Object.DistinctBy notArray "id"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.id}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.DistinctBy}}
+```
+**Returns**
+``` html
+<strong>Direct Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test1</li>
+    <li>Value: test2</li>
+    <li>Value: test3</li>
+</ul>
+
+<strong>Nested Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: 5</li>
+    <li>Value: 6</li>
+    <li>Value: 7</li>
+</ul>
+
+<strong>Property Doesen't Exist:</strong>
+<strong>True</strong>
+<ul>
+</ul>
+
+<strong>Property Exists in Some Elements:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: 2</li>
+    <li>Value: 3</li>
+</ul>
+
+<strong>Input Not an Array:</strong>
 <strong>False</strong>
 ```
 
@@ -468,6 +630,336 @@ These block helpers allow for querying, filtering, and comparing objects.
 ```
 
 ---
+## Helpers.Object.OrderBy
+|||
+|-|-|
+|**Summary**|Return a collection of elements ordered sequentially by the matching property value|
+|**Returns**|A sequenced collection of elements|
+|**Remarks**|If object is not an array, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+||If property is not found, this will return the original collection|
+|||
+|**Parameters**||
+|_input_|Array of elements to sequence|
+|_property_|Property to match on|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        {
+            "id": 3,
+            "name": "test3",
+            "price": 10.50,
+            "type": {
+                "id": 5,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 1,
+            "name": "test1",
+            "price": 60.90,
+            "type": {
+                "id": 6,
+                "name": "type2"
+            }
+        },
+        {
+            "id": 2,
+            "name": "test2",
+            "price": 30.00,
+            "type": {
+                "id": 7,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 4,
+            "name": "test4",
+            "price": 110.00,
+            "type": {
+                "id": 5,
+                "name": "type3"              
+            }
+        }
+    ],
+    "notArray": {
+        "id": 1
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+<strong>Direct String Property:</strong>
+{{#Helpers.Object.OrderBy array "name"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderBy}}
+
+<strong>Direct Decimal Property:</strong>
+{{#Helpers.Object.OrderBy array "price"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderBy}}
+
+<strong>Nested Property Result:</strong>
+{{#Helpers.Object.OrderBy array "type.id"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderBy}}
+
+<strong>Property Doesen't Exist Result:</strong>
+{{#Helpers.Object.OrderBy array "doesnotexist"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderBy}}
+
+<strong>Input Not an Array Result:</strong>
+{{#Helpers.Object.OrderBy notArray "id"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderBy}}
+```
+**Returns**
+``` html
+<strong>Direct String Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test1</li>
+    <li>Value: test2</li>
+    <li>Value: test3</li>
+    <li>Value: test4</li>
+</ul>
+
+<strong>Direct Decimal Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test3</li>
+    <li>Value: test2</li>
+    <li>Value: test1</li>
+    <li>Value: test4</li>
+</ul>
+
+<strong>Nested Property Result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test3</li>
+    <li>Value: test4</li>
+    <li>Value: test1</li>
+    <li>Value: test2</li>
+</ul>
+
+<strong>Property Doesen't Exist Result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test3</li>
+    <li>Value: test1</li>
+    <li>Value: test2</li>
+    <li>Value: test4</li>
+</ul>
+
+<strong>Input Not an Array Result:</strong>
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.OrderByDescending
+|||
+|-|-|
+|**Summary**|Return a collection of elements in descending order by the matching property value|
+|**Returns**|A sequenced collection of elements|
+|**Remarks**|If object is not an array, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+||If property is not found, this will return the original collection|
+|||
+|**Parameters**||
+|_input_|Array of elements to sequence|
+|_property_|Property to match on|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        {
+            "id": 3,
+            "name": "test3",
+            "price": 10.50,
+            "type": {
+                "id": 5,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 1,
+            "name": "test1",
+            "price": 60.90,
+            "type": {
+                "id": 6,
+                "name": "type2"
+            }
+        },
+        {
+            "id": 2,
+            "name": "test2",
+            "price": 30.00,
+            "type": {
+                "id": 7,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 4,
+            "name": "test4",
+            "price": 110.00,
+            "type": {
+                "id": 5,
+                "name": "type3"              
+            }
+        }
+    ],
+    "notArray": {
+        "id": 1
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+<strong>Direct String Property:</strong>
+{{#Helpers.Object.OrderByDescending array "name"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderByDescending}}
+
+<strong>Direct Decimal Property:</strong>
+{{#Helpers.Object.OrderByDescending array "price"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderByDescending}}
+
+<strong>Nested Property Result:</strong>
+{{#Helpers.Object.OrderByDescending array "type.id"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderByDescending}}
+
+<strong>Property Doesen't Exist Result:</strong>
+{{#Helpers.Object.OrderByDescending array "doesnotexist"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderByDescending}}
+
+<strong>Input Not an Array Result:</strong>
+{{#Helpers.Object.OrderByDescending notArray "id"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.name}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.OrderByDescending}}
+```
+**Returns**
+``` html
+<strong>Direct String Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test4</li>
+    <li>Value: test3</li>
+    <li>Value: test2</li>
+    <li>Value: test1</li>
+</ul>
+
+<strong>Direct Decimal Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test4</li>
+    <li>Value: test1</li>
+    <li>Value: test2</li>
+    <li>Value: test3</li>
+</ul>
+
+<strong>Nested Property Result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test2</li>
+    <li>Value: test1</li>
+    <li>Value: test3</li>
+    <li>Value: test4</li>
+</ul>
+
+<strong>Property Doesen't Exist Result:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test3</li>
+    <li>Value: test1</li>
+    <li>Value: test2</li>
+    <li>Value: test4</li>
+</ul>
+
+<strong>Input Not an Array Result:</strong>
+<strong>False</strong>
+```
+
+---
 ## Helpers.Object.Page
 |||
 |-|-|
@@ -505,7 +997,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Page}}
@@ -516,7 +1008,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Page}}
@@ -527,7 +1019,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Page}}
@@ -538,7 +1030,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Page}}
@@ -550,13 +1042,261 @@ These block helpers allow for querying, filtering, and comparing objects.
 <ul>
     <li>Value: three</li>
     <li>Value: four</li>
+</ul>
+
+<strong>False</strong>
+
+<strong>False</strong>
+
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.Reverse
+|||
+|-|-|
+|**Summary**|Reverses the order of an array|
+|**Returns**|An array with the element order reversed|
+|**Remarks**|If object is not an array, if page number is not passed in, or if page number or countPerPage are <= 0, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+|||
+|**Parameters**||
+|_input_|Array of elements to reverse|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+    ],
+    "badInput": {
+        "something": true
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>Result:</strong>
+{{#Helpers.Object.Reverse array}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Reverse}}
+
+<strong>Input Not an Array Result:</strong>
+{{#Helpers.Object.Reverse badInput}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Reverse}}
+```
+**Returns**
+``` html
+<strong>Result:</strong>
+<strong>True</strong>
 <ul>
+    <li>Value: five</li>
+    <li>Value: four</li>
+    <li>Value: three</li>
+    <li>Value: two</li>
+    <li>Value: one</li>
+</ul>
 
+<strong>Input Not an Array Result:</strong>
+<strong>False</strong>
+```
+
+## Helpers.Object.Select
+|||
+|-|-|
+|**Summary**|Return a collection of properties from an array|
+|**Returns**|Updated collection of elements|
+|**Remarks**|If input is not an array, this will drop into the else block. **Note**: this can be used with an array of maps/objects, it does not need to be an array of simple types(string, numeric, bool, etc..)|
+||If property is not found, this will return an empty array|
+|||
+|**Parameters**||
+|_input_|Array of objects to search|
+|_property_|Property to match on|
+
+### Example
+**Context**
+``` json
+{
+    "array": [
+        {
+            "id": 1,
+            "name": "test1",
+            "type": {
+                "id": 5,
+                "name": "type1"
+            }
+        },
+        {
+            "id": 2,
+            "name": "test2",
+            "type": {
+                "id": 5,
+                "name": "type1",
+                "color": "blue"
+            }
+        },
+        {
+            "id": 3,
+            "name": "test2",
+            "type": {
+                "id": 6,
+                "name": "type2",
+                "color": "red"
+            }
+        },
+        {
+            "id": 4,
+            "name": "test3",
+            "type": {
+                "id": 7,
+                "name": "type3",
+                "color": "red"               
+            }
+        }
+    ],
+    "notArray": {
+        "id": 1
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>Direct Property:</strong>
+{{#Helpers.Object.Select array "name"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Select}}
+
+<strong>Object Property:</strong>
+{{#Helpers.Object.Select array "type"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this.id}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Select}}
+
+<strong>Nested Property:</strong>
+{{#Helpers.Object.Select array "type.name"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Select}}
+
+<strong>Property Exists in Some Elements:</strong>
+{{#Helpers.Object.Select array "type.color"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Select}}
+
+<strong>Property Doesen't Exist:</strong>
+{{#Helpers.Object.Select array "doesnotexist"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Select}}
+
+<strong>Input Not an Array:</strong>
+{{#Helpers.Object.Select notArray "id"}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Select}}
+```
+**Returns**
+``` html
+<strong>Direct Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: test1</li>
+    <li>Value: test2</li>
+    <li>Value: test2</li>
+    <li>Value: test3</li>
+</ul>
+
+<strong>Object Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: 5</li>
+    <li>Value: 5</li>
+    <li>Value: 6</li>
+    <li>Value: 7</li>
+</ul>
+
+<strong>Nested Property:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: type1</li>
+    <li>Value: type1</li>
+    <li>Value: type2</li>
+    <li>Value: type3</li>
+</ul>
+
+<strong>Property Exists in Some Elements:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: blue</li>
+    <li>Value: red</li>
+    <li>Value: red</li>
+</ul>
+
+<strong>Property Doesen't Exist:</strong>
+<strong>True</strong>
+<ul>
+</ul>
+
+<strong>Input Not an Array:</strong>
 <strong>False</strong>
 
-<strong>False</strong>
-
-<strong>False</strong>
 ```
 
 ---
@@ -594,7 +1334,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Skip}}
@@ -605,7 +1345,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Skip}}
@@ -616,8 +1356,132 @@ These block helpers allow for querying, filtering, and comparing objects.
 <strong>True</strong>
 <ul>
     <li>Value: three</li>
-<ul>
+</ul>
 
+<strong>False</strong>
+```
+
+---
+## Helpers.Object.Sort
+|||
+|-|-|
+|**Summary**|Sort an array of elements|
+|**Returns**|A sorted array|
+|**Remarks**|If object is not an array, if page number is not passed in, or if page number or countPerPage are <= 0, this will drop into the else block.|
+||This only works with arrays of simple types(string, numeric, bool, etc..). Sorting non-simple types will return an empty array.|
+|||
+|**Parameters**||
+|_input_|Array of elements to sort|
+
+### Example
+**Context**
+``` json
+{
+    "stringArray": [
+        "one",
+        "two",
+        "three",
+        "four",
+        "five"
+    ],
+    "numericArray": [
+        5,
+        3,
+        4,
+        1,
+        2
+    ],
+    "objectArray": [
+        {
+            "id": 2
+        },
+        {
+            "id": 1
+        }
+    ],
+    "badInput": {
+        "something": true
+    }
+}
+```
+**Usage**
+``` handlebars
+<strong>String Array:</strong>
+{{#Helpers.Object.Sort stringArray}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Sort}}
+
+<strong>Numeric Array:</strong>
+{{#Helpers.Object.Sort numericArray}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Sort}}
+
+<strong>Object Array:</strong>
+{{#Helpers.Object.Sort objectArray}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Sort}}
+
+<strong>Input Not an Array:</strong>
+{{#Helpers.Object.Sort badInput}}
+    <strong>True</strong>
+    <ul>
+    {{#each this}}
+        <li>Value: {{this}}</li>
+    {{/each}}
+    </ul>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.Sort}}
+```
+**Returns**
+``` html
+<strong>String Array:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: five</li>
+    <li>Value: four</li>
+    <li>Value: one</li>
+    <li>Value: three</li>
+    <li>Value: two</li>
+</ul>
+
+<strong>Numeric Array:</strong>
+<strong>True</strong>
+<ul>
+    <li>Value: 1</li>
+    <li>Value: 2</li>
+    <li>Value: 3</li>
+    <li>Value: 4</li>
+    <li>Value: 5</li>
+</ul>
+
+<strong>Object Array:</strong>
+<strong>True</strong>
+<ul>
+</ul>
+
+<strong>Input Not an Array:</strong>
 <strong>False</strong>
 ```
 
@@ -656,7 +1520,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Take}}
@@ -667,7 +1531,7 @@ These block helpers allow for querying, filtering, and comparing objects.
     {{#each this}}
         <li>Value: {{this}}</li>
     {{/each}}
-    <ul>
+    </ul>
 {{else}}
     <strong>False</strong>
 {{/Helpers.Object.Take}}
@@ -679,7 +1543,7 @@ These block helpers allow for querying, filtering, and comparing objects.
 <ul>
     <li>Value: one</li>
     <li>Value: two</li>
-<ul>
+</ul>
 
 <strong>False</strong>
 ```
