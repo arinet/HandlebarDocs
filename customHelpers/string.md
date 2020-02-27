@@ -114,8 +114,9 @@ somet...
 <strong>result:</strong>
 {{Helpers.String.Join stringArray " "}}
 {{Helpers.String.Join stringArray}}
-{{Helpers.String.Ellipsis "Lorem" "ipsum" "dolor" "sit" "amet" " "}}
-{{Helpers.String.Ellipsis "Lorem" "ipsum" "dolor" "sit" "amet"}}
+{{Helpers.String.Join "Lorem" "ipsum" "dolor" "sit" "amet" " "}}
+{{Helpers.String.Join "Lorem" "ipsum" "dolor" "sit" "amet" ""}}
+{{Helpers.String.Join "Lorem" "ipsum" "dolor" "sit" "amet"}}
 ```
 **Returns**
 ``` html
@@ -124,7 +125,13 @@ Lorem ipsum dolor sit amet
 Loremipsumdolorsitamet
 Lorem ipsum dolor sit amet
 Loremipsumdolorsitamet
+Loremametipsumametdolorametsit
 ```
+
+> **NOTE:** The last call in the examples, if you pass in multiple strings instead of a string array, and there are more than **two** strings passed in, it treats the final string as the separator/delimiator. This means that if you tried
+`{{Helpers.String.Join "Lorem" "ipsum" "dolor" "sit" "amet"}}` and wanted to get back `Loremipsumdolorsitamet`, then you would actually need to add one more string to your list; ex: `{{Helpers.String.Join "Lorem" "ipsum" "dolor" "sit" "amet" ""}}`
+
+
 
 ---
 ## Helpers.String.Lowercase
