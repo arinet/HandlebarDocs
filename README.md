@@ -26,6 +26,7 @@ Handlebars is built upon the [mustache expression engine](http://mustache.github
 * [with](builtinHelpers.md#with)
 
 ## [Custom Helpers](customHelpers.md)
+* [Date](customHelpers/date.md)
 * [HTML](customHelpers/html.md)
 * [Image](customHelpers/image.md)
 * [Math](customHelpers/math.md)
