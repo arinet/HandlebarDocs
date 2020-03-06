@@ -249,7 +249,7 @@ something
 |||
 |-|-|
 |**Summary**|Pad right input string with the padding character for a specified total length.|
-|**Returns**|Left padded string|
+|**Returns**|Right padded string|
 |**Remarks**||
 |||
 |**Parameters**||
