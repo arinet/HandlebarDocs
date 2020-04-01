@@ -6,6 +6,8 @@ These helpers provide some ability to do string manipulation.
 * [Helpers.String.Join](#helpersstringjoin)
 * [Helpers.String.Lowercase](#helpersstringlowercase)
 * [Helpers.String.Occurrences](#helpersstringoccurrences)
+* [Helpers.String.PadLeft](#helpersstringpadleft)
+* [Helpers.String.PadRight](#helpersstringpadright)
 * [Helpers.String.Prepend](#helpersstringprepend)
 * [Helpers.String.Replace](#helpersstringreplace)
 * [Helpers.String.Reverse](#helpersstringreverse)
@@ -16,7 +18,6 @@ These helpers provide some ability to do string manipulation.
 * [Helpers.String.Truncate](#helpersstringtruncate)
 * [Helpers.String.TruncateWords](#helpersstringtruncatewords)
 * [Helpers.String.Uppercase](#helpersstringuppercase)
-
 ---
 ## Helpers.String.Append
 |||
@@ -204,7 +205,84 @@ something
 2
 2
 ```
+---
+## Helpers.String.PadLeft
+|||
+|-|-|
+|**Summary**|Pad left input string with the padding character for a specified total length.|
+|**Returns**|Left padded string|
+|**Remarks**||
+|||
+|**Parameters**||
+|_str_|Base string|
+|_totalWidth_|The number of characters in the resulting string|
+|_paddingChar_|Padding character (not more than 1)|
 
+### Example
+**Context**
+``` json
+{
+    "value": "pad-me"
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+1. {{Helpers.String.PadLeft value 10 "0"}}
+2. {{Helpers.String.PadLeft value "10" "0"}}
+3. {{Helpers.String.PadLeft "custom-string" 15 "0"}}
+4. {{Helpers.String.PadLeft value 15 "more-than-1-chars"}}
+5. {{Helpers.String.PadLeft "custom-string" 15 "more-than-1-chars"}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+1. 0000pad-me
+2. 0000pad-me
+3. 000custom-string
+4. pad-me
+5. custom-string
+
+```
+---
+## Helpers.String.PadRight
+|||
+|-|-|
+|**Summary**|Pad right input string with the padding character for a specified total length.|
+|**Returns**|Right padded string|
+|**Remarks**||
+|||
+|**Parameters**||
+|_str_|Base string|
+|_totalWidth_|The number of characters in the resulting string|
+|_paddingChar_|Padding character (not more than 1)|
+
+### Example
+**Context**
+``` json
+{
+    "value": "pad-me"
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+1. {{Helpers.String.PadRight value 10 "0"}}
+2. {{Helpers.String.PadRight value "10" "0"}}
+3. {{Helpers.String.PadRight "custom-string" 15 "0"}}
+4. {{Helpers.String.PadRight value 15 "more-than-1-chars"}}
+5. {{Helpers.String.PadRight "custom-string" 15 "more-than-1-chars"}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+1. pad-me0000
+2. pad-me0000
+3. custom-string000
+4. pad-me
+5. custom-string
+
+```
 ---
 ## Helpers.String.Prepend
 |||

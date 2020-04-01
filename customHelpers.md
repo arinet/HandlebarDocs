@@ -13,6 +13,7 @@
 ---
 * [Date](customHelpers/date.md)
     * [Helpers.Date.Format](customHelpers/date.md#helpersdateformat)
+    * [Helpers.Date.Today](customHelpers/date.md#helpersdatetoday)
 * [HTML](customHelpers/html.md)
     * [Helpers.Html.Escape](customHelpers/html.md#helpershtmlescape)
     * [Helpers.Html.HtmlDecode](customHelpers/html.md#helpershtmlhtmldecode)
@@ -48,6 +49,8 @@
     * [Helpers.String.Join](customHelpers/string.md#helpersstringjoin)
     * [Helpers.String.Lowercase](customHelpers/string.md#helpersstringlowercase)
     * [Helpers.String.Occurrences](customHelpers/string.md#helpersstringoccurrences)
+    * [Helpers.String.PadLeft](customHelpers/string.md#helpersstringpadleft)
+    * [Helpers.String.PadRight](customHelpers/string.md#helpersstringpadright)
     * [Helpers.String.Prepend](customHelpers/string.md#helpersstringprepend)
     * [Helpers.String.Replace](customHelpers/string.md#helpersstringreplace)
     * [Helpers.String.Reverse](customHelpers/string.md#helpersstringreverse)
