@@ -6,6 +6,7 @@ These helpers provide some ability to query and manage objects.
 * [Helpers.Object.Max](#helpersobjectmax)
 * [Helpers.Object.Min](#helpersobjectmin)
 * [Helpers.Object.ToJson](#helpersobjecttojson)
+* [Helpers.Object.FilterKeys](#helpersobjectfilterkeys)
 
 ---
 ## Helpers.Object.GetIndex
@@ -299,4 +300,41 @@ type1
 ``` html
 <strong>result:</strong>
 [{"id":1},{"id":2}]
+```
+
+---
+## Helpers.Object.FilterKeys
+|||
+|-|-|
+|**Summary**|Returns a json string after excluding the specified keys from the input dictionary. Keys to exclude are separated by `\|`.|
+|**Returns**|JSON object with specified keys removed|
+|**Remarks**|If input is null or not a dictionary, this returns null.|
+|||
+|**Parameters**||  
+|_input_|Dictionary object to filter|  
+|_keys_|Pipe-separated (`\|`) list of keys to exclude from the result|
+
+### Example  
+**Context**  
+``` json
+{
+    "Condition": "New",
+    "VIN": "1234567890",
+    "StockNumber": "ABC123",
+    "Title": "2025 Ford F-150",
+    "Length Overall": "20 ft",
+    "Price": 45000,
+    "Color": "Blue"
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Object.FilterKeys input "Condition|VIN|StockNumber|Title|Length Overall"}}
+```
+
+**Returns**
+``` html
+<strong>result:</strong>
+{"Price":45000,"Color":"Blue"}
 ```
