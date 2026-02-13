@@ -2,6 +2,7 @@
 These block helpers allow for querying, filtering, and comparing objects.
 
 * [Helpers.Object.Compare](#helpersobjectcompare)
+* [Helpers.Object.ContainsAny](#helpersobjectcontainsany)
 * [Helpers.Object.Distinct](#helpersobjectdistinct)
 * [Helpers.Object.DistinctBy](#helpersobjectdistinctby)
 * [Helpers.Object.Filter](#helpersobjectfilter)
@@ -16,6 +17,7 @@ These block helpers allow for querying, filtering, and comparing objects.
 * [Helpers.Object.Skip](#helpersobjectskip)
 * [Helpers.Object.Sort](#helpersobjectsort)
 * [Helpers.Object.Take](#helpersobjecttake)
+* [Helpers.Object.Where](#helpersobjectwhere)
 
 ---
 ## Helpers.Object.Compare
@@ -67,6 +69,97 @@ These block helpers allow for querying, filtering, and comparing objects.
 <strong>True</strong>
 
 <strong>False</strong>
+```
+
+---
+## Helpers.Object.ContainsAny
+|||
+|-|-|
+|**Summary**|Checks if any item in a collection has a property matching one of the provided values|
+|**Returns**|Whether any item has a matching property value|
+|**Remarks**|If input is not an array, or if fewer than 3 arguments are provided (input, property, and at least one value), this will drop into the else block.|
+||Supports nested property lookups using dot notation (e.g. "type.name")|
+|||
+|**Parameters**||
+|_input_|Array of objects to search|
+|_property_|Property name to check on each item|
+|_values_|One or more values to match against|
+
+### Example
+**Context**
+``` json
+{
+    "vehicles": [
+        {
+            "id": 1,
+            "name": "ZR 9000",
+            "type": {
+                "id": 5,
+                "name": "Snowmobile"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Alterra 700",
+            "type": {
+                "id": 6,
+                "name": "ATV"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Prowler HDX",
+            "type": {
+                "id": 7,
+                "name": "Side x Side"
+            }
+        }
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>Single Value Match:</strong>
+{{#Helpers.Object.ContainsAny vehicles "type.name" "Snowmobile"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.ContainsAny}}
+
+<strong>Multiple Value Match:</strong>
+{{#Helpers.Object.ContainsAny vehicles "type.name" "Snowmobile" "ATV"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.ContainsAny}}
+
+<strong>No Match:</strong>
+{{#Helpers.Object.ContainsAny vehicles "type.name" "Motorcycle"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.ContainsAny}}
+
+<strong>Direct Property:</strong>
+{{#Helpers.Object.ContainsAny vehicles "name" "Alterra 700" "Prowler HDX"}}
+    <strong>True</strong>
+{{else}}
+    <strong>False</strong>
+{{/Helpers.Object.ContainsAny}}
+```
+**Returns**
+``` html
+<strong>Single Value Match:</strong>
+<strong>True</strong>
+
+<strong>Multiple Value Match:</strong>
+<strong>True</strong>
+
+<strong>No Match:</strong>
+<strong>False</strong>
+
+<strong>Direct Property:</strong>
+<strong>True</strong>
 ```
 
 ---
@@ -1546,4 +1639,145 @@ These block helpers allow for querying, filtering, and comparing objects.
 </ul>
 
 <strong>False</strong>
+```
+
+---
+## Helpers.Object.Where
+|||
+|-|-|
+|**Summary**|Filters an array of objects given some expression, with support for quoted string values containing spaces|
+|**Returns**|Array of matching objects|
+|**Remarks**|Works like Filter but allows expressions with quoted values containing spaces, such as: name = "Dirt Bikes" OR name = "Road Bikes"|
+||If input is null or expression is null/empty, this will drop into the else block.|
+|||
+|**Parameters**||
+|_input_|Array to filter|
+|_expression_|Expression to filter by (supports quoted values with spaces)|
+|_ignoreCase_|Whether or not to ignore case, defaults to false|
+
+### Example
+**Context**
+``` json
+{
+    "objects": [
+        {
+            "id": 1,
+            "name": "test-1",
+            "type": "thing",
+            "category": "Road Bikes",
+            "meta": {
+                "name": "data"
+            }
+        },
+        {
+            "id": 2,
+            "name": "test-2",
+            "type": "thing",
+            "category": "Dirt Bikes",
+            "meta": {
+                "name": "data"
+            }
+        },
+        {
+            "id": 3,
+            "name": "test-3",
+            "type": "something else",
+            "category": "Mountain Bikes"
+        },
+        {
+            "id": 4,
+            "name": "test-4",
+            "type": "thing",
+            "category": "ATV",
+            "meta": {
+                "name": "info"
+            }
+        }
+    ]
+}
+```
+**Usage**
+``` handlebars
+<strong>Quoted Value with Spaces:</strong>
+<ul>
+    {{#Helpers.Object.Where objects 'category="Road Bikes"'}}
+        {{#each this}}
+            <li>{{this.name}}: {{this.category}}</li>
+        {{/each}}
+    {{else}}
+        <li>Failed to find match</li>
+    {{/Helpers.Object.Where}}
+</ul>
+
+<strong>Value without Spaces (no quotes needed):</strong>
+<ul>
+    {{#Helpers.Object.Where objects 'category=ATV'}}
+        {{#each this}}
+            <li>{{this.name}}: {{this.category}}</li>
+        {{/each}}
+    {{else}}
+        <li>Failed to find match</li>
+    {{/Helpers.Object.Where}}
+</ul>
+
+<strong>Multiple Quoted Values with OR:</strong>
+<ul>
+    {{#Helpers.Object.Where objects 'category="Road Bikes" OR category="Dirt Bikes"'}}
+        {{#each this}}
+            <li>{{this.name}}: {{this.category}}</li>
+        {{/each}}
+    {{else}}
+        <li>Failed to find match</li>
+    {{/Helpers.Object.Where}}
+</ul>
+
+<strong>No Match:</strong>
+<ul>
+    {{#Helpers.Object.Where objects 'category="BMX Bikes"'}}
+        {{#each this}}
+            <li>{{this.name}}: {{this.category}}</li>
+        {{/each}}
+    {{else}}
+        <li>Failed to find match</li>
+    {{/Helpers.Object.Where}}
+</ul>
+
+<strong>Ignore Case:</strong>
+<ul>
+    {{#Helpers.Object.Where objects 'category="road bikes"' true}}
+        {{#each this}}
+            <li>{{this.name}}: {{this.category}}</li>
+        {{/each}}
+    {{else}}
+        <li>Failed to find match</li>
+    {{/Helpers.Object.Where}}
+</ul>
+```
+**Returns**
+``` html
+<strong>Quoted Value with Spaces:</strong>
+<ul>
+    <li>test-1: Road Bikes</li>
+</ul>
+
+<strong>Value without Spaces (no quotes needed):</strong>
+<ul>
+    <li>test-4: ATV</li>
+</ul>
+
+<strong>Multiple Quoted Values with OR:</strong>
+<ul>
+    <li>test-1: Road Bikes</li>
+    <li>test-2: Dirt Bikes</li>
+</ul>
+
+<strong>No Match:</strong>
+<ul>
+    <li>Failed to find match</li>
+</ul>
+
+<strong>Ignore Case:</strong>
+<ul>
+    <li>test-1: Road Bikes</li>
+</ul>
 ```
