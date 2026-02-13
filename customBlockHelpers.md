@@ -53,6 +53,7 @@
 ---
 * [Object](customBlockHelpers/object.md)
     * [Helpers.Object.Compare](customBlockHelpers/object.md#helpersobjectcompare)
+    * [Helpers.Object.ContainsAny](customBlockHelpers/object.md#helpersobjectcontainsany)
     * [Helpers.Object.Distinct](customBlockHelpers/object.md#helpersobjectdistinct)
     * [Helpers.Object.DistinctBy](customBlockHelpers/object.md#helpersobjectdistinctby)
     * [Helpers.Object.Filter](customBlockHelpers/object.md#helpersobjectfilter)
@@ -67,6 +68,7 @@
     * [Helpers.Object.Skip](customBlockHelpers/object.md#helpersobjectskip)
     * [Helpers.Object.Sort](customBlockHelpers/object.md#helpersobjectsort)
     * [Helpers.Object.Take](customBlockHelpers/object.md#helpersobjecttake)
+    * [Helpers.Object.Where](customBlockHelpers/object.md#helpersobjectwhere)
 * [Path](customBlockHelpers/path.md)
     * [Helpers.Path.GetKeyValuePairMatches](customBlockHelpers/path.md#helperspathgetkeyvaluepairmatches)
     * [Helpers.Path.HasExtension](customBlockHelpers/path.md#helperspathhasextension)
