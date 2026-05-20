@@ -91,3 +91,32 @@ Enter a string having '&' or '"'  in it:
 <strong>result:</strong>
 Enter a string having &#39;&amp;&#39; or &#39;&quot;&#39;  in it:
 ```
+
+---
+## Helpers.Html.SanitizeHtml
+|||
+|-|-|
+|**Summary**|Parses HTML through HtmlAgilityPack and re-serialises it so the output is well-formed.|
+|**Returns**|Well-formed HTML with any unclosed tags closed.|
+|**Remarks**|Useful for neutralising source-malformed markup (e.g. a missing closing tag in an OEM-feed description, or a fragment produced by truncating HTML mid-tag) before it is emitted via a triple-stash <c>{{{...}}}</c> expression, where unbalanced tags would otherwise cascade into surrounding containers.|
+|||
+|**Parameters**||
+|_html_|String to sanitize|
+
+### Example
+**Context**
+``` json
+{
+    "value": "<div class=\"productDescription\"><p>Description</p>"
+}
+```
+**Usage**
+``` handlebars
+<strong>result:</strong>
+{{Helpers.Html.SanitizeHtml value}}
+```
+**Returns**
+``` html
+<strong>result:</strong>
+<div class="productDescription"><p>Description</p></div>
+```
